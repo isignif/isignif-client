@@ -11,10 +11,12 @@ export abstract class Model {
   public token?: string;
 
   get createdAtDate(): Date {
+    if (!this.createdAt) throw new Error('createdAt is undefined')
     return new Date(this.createdAt);
   }
 
   get updatedAtDate(): Date {
+    if (!this.updatedAt) throw new Error('updatedAt is undefined')
     return new Date(this.updatedAt);
   }
 

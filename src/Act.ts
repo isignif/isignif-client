@@ -8,30 +8,30 @@ import { Signification } from './Signification';
 
 export class Act extends Model {
 
-  public step: string;
-  public billRecipient: string;
-  public billSiret: string;
-  public billAddress: string;
-  public billZipCode: string;
-  public billTown: string;
-  public billEmail: string;
-  public billPhone: string;
+  public step?: string;
+  public billRecipient?: string;
+  public billSiret?: string;
+  public billAddress?: string;
+  public billZipCode?: string;
+  public billTown?: string;
+  public billEmail?: string;
+  public billPhone?: string;
 
-  public advocateId: number;
-  public actTypeId: number;
-  public coefficient: number;
-  public express: boolean;
-  public reference: string;
-  public billReference: string;
-  public downloadedAt: string;
-  public archivedAt: string;
-  public estimatedValueCache: string;
+  public advocateId?: number;
+  public actTypeId?: number;
+  public coefficient?: number;
+  public express?: boolean;
+  public reference?: string;
+  public billReference?: string;
+  public downloadedAt?: string;
+  public archivedAt?: string;
+  public estimatedValueCache?: string;
 
-  public currentStep: string;
+  public currentStep?: string;
 
-  private _advocate: User;
-  private _actType: ActType;
-  private _significations: Signification[];
+  private _advocate?: User;
+  private _actType?: ActType;
+  private _significations?: Signification[];
 
   static all(token: string): Promise<Act[]> {
     const url = `${apiUrl}/acts`;
@@ -40,7 +40,7 @@ export class Act extends Model {
       .then((resp) => {
         const included = resp.data.included;
 
-        return resp.data.data.map((actData) => {
+        return resp.data.data.map((actData: any) => {
           const act = new Act();
           act.id = parseInt(actData.id);
           act.token = token;
@@ -103,30 +103,30 @@ export class Act extends Model {
    * Get linked advocate or make an extra HTTP query to get
    */
   public getAdvocate(): Promise<User> {
-    if (this._advocate) {
-      return Promise.resolve(this._advocate);
-    } else {
-      return User.get(this.advocateId, this.token)
-        .then(advocate => this._advocate = advocate);
-    }
+    if (this._advocate) return Promise.resolve(this._advocate);
+    if (!this.advocateId) return Promise.reject(new Error("Can't get advocate because advocateId si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get bailiff because token si undefined"));
+
+    return User.get(this.advocateId, this.token)
+      .then(advocate => this._advocate = advocate);
   }
 
   public getActType(): Promise<ActType> {
-    if (this._actType) {
-      return Promise.resolve(this._actType);
-    } else {
-      return ActType.get(this.actTypeId, this.token)
-        .then(actType => this._actType = actType);
-    }
+    if (this._actType) return Promise.resolve(this._actType);
+    if (!this.actTypeId) return Promise.reject(new Error("Can't get actType because actTypeId si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get bailiff because token si undefined"));
+
+    return ActType.get(this.actTypeId, this.token)
+      .then(actType => this._actType = actType);
   }
 
   public getSignifications(): Promise<Signification[]> {
-    if (this._significations) {
-      return Promise.resolve(this._significations);
-    } else {
-      return Signification.all(this.id, this.token)
-        .then(significations => this._significations = significations);
-    }
+    if (this._significations) return Promise.resolve(this._significations);
+    if (!this.id) return Promise.reject(new Error("Can't get significations because id si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get bailiff because token si undefined"));
+
+    return Signification.all(this.id, this.token)
+      .then(significations => this._significations = significations);
   }
 
   get name(): string {

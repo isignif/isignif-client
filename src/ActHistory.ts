@@ -62,25 +62,21 @@ export class ActHistory extends Model {
   }
 
   public getAct(): Promise<Act> {
-    if (!this.actId) return Promise.reject();
+    if (this._act) return Promise.resolve(this._act);
+    if (!this.actId) return Promise.reject(new Error("Can't get act because actId si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get bailiff because token si undefined"));
 
-    if (this._act) {
-      return Promise.resolve(this._act);
-    } else {
-      return Act.get(this.actId, this.token)
-        .then(act => this._act = act);
-    }
+    return Act.get(this.actId, this.token)
+      .then(act => this._act = act);
   }
 
   public getUser(): Promise<User> {
-    if (!this.userId) return Promise.reject();
+    if (this._user) return Promise.resolve(this._user);
+    if (!this.userId) return Promise.reject(new Error("Can't get act because userId si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get bailiff because token si undefined"));
 
-    if (this._user) {
-      return Promise.resolve(this._user);
-    } else {
-      return User.get(this.userId, this.token)
-        .then(user => this._user = user);
-    }
+    return User.get(this.userId, this.token)
+      .then(user => this._user = user);
   }
 
   get humanReadableStep(): string {

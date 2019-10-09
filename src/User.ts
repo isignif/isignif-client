@@ -4,23 +4,23 @@ import { Model } from './Model';
 import { apiUrl } from './config';
 
 export class User extends Model {
-  public email: string;
-  public firstName: string;
-  public lastName: string;
-  public activated: boolean;
-  public lastWork: string;
-  public creatorId: number;
-  public competenceAreaId: number;
-  public mustResetPassword: boolean;
-  public approved: boolean;
-  public address1: string;
-  public address2: string;
-  public zipCode: string;
-  public town: string;
-  public companyName: string;
-  public siret: string;
-  public phone: string;
-  public premiumUntil: string;
+  public email?: string;
+  public firstName?: string;
+  public lastName?: string;
+  public activated?: boolean;
+  public lastWork?: string;
+  public creatorId?: number;
+  public competenceAreaId?: number;
+  public mustResetPassword?: boolean;
+  public approved?: boolean;
+  public address1?: string;
+  public address2?: string;
+  public zipCode?: string;
+  public town?: string;
+  public companyName?: string;
+  public siret?: string;
+  public phone?: string;
+  public premiumUntil?: string;
 
   static get(id: number, token: string): Promise<User> {
     const url = `${apiUrl}/advocates/${id}`;
@@ -31,10 +31,6 @@ export class User extends Model {
         user.id = id;
         user.hydrateFromAttributes(resp.data.data.attributes);
         return user;
-      })
-      .catch(e => {
-        console.error(e);
-        return null;
       })
   }
 
@@ -66,9 +62,11 @@ export class User extends Model {
 
   /**
    * Make an HTTP request to get a JWT token
-   * @param password 
+   * @param password
    */
   public getToken(password: string): Promise<string> {
+    if (!this.email) return Promise.reject(new Error("Can't get a token if user email is undefined"));
+
     const url = `${apiUrl}/tokens`;
 
     const formData = new FormData();

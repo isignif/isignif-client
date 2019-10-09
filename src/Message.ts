@@ -61,13 +61,11 @@ export class Message extends Model {
   }
 
   public getUser(): Promise<User> {
-    if (!this.userId) return Promise.reject();
+    if (this._user) return Promise.resolve(this._user);
+    if (!this.userId) return Promise.reject(new Error("Can't get user because userId si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get bailiff because token si undefined"));
 
-    if (this._user) {
-      return Promise.resolve(this._user);
-    } else {
-      return User.get(this.userId, this.token)
-        .then(user => this._user = user);
-    }
+    return User.get(this.userId, this.token)
+      .then(user => this._user = user);
   }
 }

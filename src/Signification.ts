@@ -77,23 +77,21 @@ export class Signification extends Model {
    * Get linked bailiff or make an extra HTTP query to get
    */
   public getBailiff(): Promise<User> {
-    this.createdAt
+    if (this._bailiff) return Promise.resolve(this._bailiff);
+    if (!this.bailiffId) return Promise.reject(Error("Can't get bailiff because bailiffId si undefined"));
+    if (!this.token) return Promise.reject(Error("Can't get bailiff because token si undefined"));
 
-    if (this._bailiff) {
-      return Promise.resolve(this._bailiff);
-    } else {
-      return User.get(this.bailiffId, this.token)
-        .then(advocate => this._bailiff = advocate);
-    }
+    return User.get(this.bailiffId, this.token)
+      .then(advocate => this._bailiff = advocate);
   }
 
   public getAct(): Promise<Act> {
-    if (this._act) {
-      return Promise.resolve(this._act);
-    } else {
-      return Act.get(this.actId, this.token)
-        .then(act => this._act = act);
-    }
+    if (this._act) return Promise.resolve(this._act);
+    if (!this.actId) return Promise.reject(new Error("Can't get act because actId si undefined"));
+    if (!this.token) throw Promise.reject(("Can't get bailiff because token si undefined"));
+
+    return Act.get(this.actId, this.token)
+      .then(act => this._act = act);
   }
 
 }
