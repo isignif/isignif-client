@@ -1,6 +1,6 @@
 {
   "name": "isignif-client",
-  "version": "0.0.0",
+  "version": "0.0-alpha.1",
   "description": "",
   "keywords": [],
   "main": "dist/isignif-client.umd.js",
@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "author": "Alexandre Rousseau <alexandre.rousseau@dougs.fr>",
+  "author": "Alexandre Rousseau <a.rousseau@isignif.fr>",
   "repository": {
     "type": "git",
     "url": ""
