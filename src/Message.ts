@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Model } from './Model';
 import { apiUrl } from './config';
 import { User } from './User';
+import { Signification } from './Signification';
 
 
 
@@ -14,6 +15,7 @@ export class Message extends Model {
   public readAt?: string;
 
   public _user?: User;
+  public _signification?: Signification;
 
   static fromSignification(actId: number, significationId: number, token: string): Promise<Message[]> {
     const url = `${apiUrl}/acts/${actId}/significations/${significationId}/messages`;
@@ -63,9 +65,18 @@ export class Message extends Model {
   public getUser(): Promise<User> {
     if (this._user) return Promise.resolve(this._user);
     if (!this.userId) return Promise.reject(new Error("Can't get user because userId si undefined"));
-    if (!this.token) return Promise.reject(new Error("Can't get bailiff because token si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get user because token si undefined"));
 
     return User.get(this.userId, this.token)
       .then(user => this._user = user);
   }
+
+  // public getSignification(): Promise<User> {
+  //   if (this._user) return Promise.resolve(this._user);
+  //   if (!this.significationId) return Promise.reject(new Error("Can't get signification because userId si undefined"));
+  //   if (!this.token) return Promise.reject(new Error("Can't get signification because token si undefined"));
+
+  //   return Signification.get(this. this.significationId, this.token)
+  //     .then(user => this._user = user);
+  // }
 }
