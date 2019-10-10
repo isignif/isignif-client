@@ -139,9 +139,21 @@ export class Act extends Model {
   }
 
   public save(significations: ActSignificationParams[] = []): Promise<any> {
-    if (this.id) throw new Error('TODO: update')
     if (!this.token) throw new Error('You must provide a valid JWT token.');
+    if (!this.actTypeId) throw new Error('You must provide an actTypeId.');
 
+    if (this.id) {
+      return this.update(significations);
+    } else {
+      return this.create(significations);
+    }
+  }
+
+  private update(significations: ActSignificationParams[] = []): Promise<any> {
+    throw new Error('TODO: Not implemented')
+  }
+
+  private create(significations: ActSignificationParams[] = []): Promise<any> {
     const formData = new FormData();
     if(this.express) formData.append('act[express]', String(this.express));
     if(this.actTypeId) formData.append('act[act_type_id]', String(this.actTypeId));
