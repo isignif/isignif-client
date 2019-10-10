@@ -16,6 +16,7 @@ export class ActFile extends Model {
   private _act?: Act;
   private _signification?: Signification;
 
+  // CRUD
 
   static all(actId: number, significationId: number, token: string): Promise<ActFile[]> {
     const url = `${apiUrl}/acts/${actId}/significations/${significationId}/act_files/`;
@@ -67,6 +68,8 @@ export class ActFile extends Model {
     }
   }
 
+  // RELATIONSHIPS
+
   public getAct(): Promise<Act> {
     if (this._act) return Promise.resolve(this._act);
     if (!this.actId) return Promise.reject(new Error("Can't get act because actId si undefined"));
@@ -94,4 +97,5 @@ export class ActFile extends Model {
     return Signification.get(this.actId, this.significationId, this.token)
       .then(s => this._signification = s);
   }
+
 }
