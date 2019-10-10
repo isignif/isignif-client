@@ -1,9 +1,6 @@
 import axios from 'axios'
-
 import { Model } from './Model'
 import { apiUrl } from './config'
-
-import * as FormData from 'form-data'
 
 export class User extends Model {
   public email?: string
@@ -66,8 +63,9 @@ export class User extends Model {
    * @param password
    */
   public getToken(password: string): Promise<string> {
-    if (!this.email)
+    if (!this.email) {
       return Promise.reject(new Error("Can't get a token if user email is undefined"))
+    }
 
     const url = `${apiUrl}/tokens`
 
