@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Model } from './Model'
 import { apiUrl } from './config'
 
-import * as az from 'FormData'
+import * as FormData from 'form-data'
 
 export class User extends Model {
   public email?: string
@@ -71,10 +71,13 @@ export class User extends Model {
 
     const url = `${apiUrl}/tokens`
 
-    const formData = new FormData()
+    const formData = new URLSearchParams()
     formData.append('user[email]', this.email)
     formData.append('user[password]', password)
 
-    return axios.post(url, formData).then(resp => resp.data.token)
+    return axios
+      .post(url, formData)
+      .then(resp => resp.data.token)
+      .catch(e => console.error(e))
   }
 }

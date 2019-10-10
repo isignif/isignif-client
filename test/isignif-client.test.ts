@@ -1,14 +1,22 @@
-import DummyClass from "../src/isignif-client"
+import { User } from '../src/isignif-client'
 
 /**
  * Dummy test
  */
-describe("Dummy test", () => {
-  it("works if true is truthy", () => {
-    expect(true).toBeTruthy()
-  })
+describe('User', () => {
+  it('get a token', done => {
+    const user = new User()
+    user.email = 'support@isignif.fr'
+    user.getToken('20462046')
 
-  it("DummyClass is instantiable", () => {
-    expect(new DummyClass()).toBeInstanceOf(DummyClass)
+    user
+      .getToken('20462046')
+      .then(token => {
+        expect(token).toBeTruthy()
+        done()
+      })
+      .catch(e => {
+        done(e)
+      })
   })
 })
