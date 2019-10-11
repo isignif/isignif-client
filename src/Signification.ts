@@ -15,6 +15,8 @@ export class Signification extends Model {
   private _bailiff?: User
   private _act?: Act
 
+  // CRUD
+
   static all(actId: number, token: string): Promise<Signification[]> {
     const url = `${apiUrl}/acts/${actId}/significations`
 
@@ -69,6 +71,42 @@ export class Signification extends Model {
       this._act.hydrateFromAttributes(actData.attributes)
     }
   }
+
+  public save(token: string | undefined = undefined): Promise<Signification> {
+    if (token !== undefined) this.token = token
+    if (!this.token) throw new Error('You must provide a valid JWT token.')
+    if (!this.actId) throw new Error('You must provide an actId.')
+    if (!this.townId) throw new Error('You must provide an townId.')
+
+    if (this.id) {
+      return this.update()
+    } else {
+      return this.create()
+    }
+  }
+
+  private update(): Promise<Signification> {
+    throw new Error('TODO: Not implemented')
+  }
+
+  private create(): Promise<Signification> {
+    const formData = new URLSearchParams()
+
+    formData.append('signification[town_id]', String(this.townId))
+    formData.append('signification[name]', String(this.name))
+
+    const url = `${apiUrl}/acts/${this.actId}/significations`
+
+    return axios
+      .post(url, formData, { headers: { Authorization: this.token } })
+      .then(response => {
+        const responseData = response.data
+        this.id = Number(responseData.data.id)
+        return this
+      })
+  }
+
+  // RELATIONSHIPS
 
   /**
    * Get linked bailiff or make an extra HTTP query to get

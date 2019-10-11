@@ -1,4 +1,4 @@
-import { Act, User } from '../src/isignif-client'
+import { Act, User, ActType, Signification, Town } from '../src/isignif-client'
 
 jest.setTimeout(30000)
 
@@ -22,7 +22,16 @@ describe('User', () => {
   })
 })
 
-describe('Act', () => {
+describe('Town', () => {
+  it('search a town', done => {
+
+    Town.search('Lyon')
+      .then(() => done())
+      .catch(e => done(e))
+  })
+})
+
+describe('with token', () => {
   let token: string = ''
 
   beforeAll(async () => {
@@ -31,23 +40,76 @@ describe('Act', () => {
     token = await user.getToken('20462046')
   })
 
-  it('should forbid if bad token', done => {
-    Act.all('toto')
-      .then(() => done(new Error('Should forbid')))
-      .catch(() => done())
+
+  describe('ActType', () => {
+    it('should get all act types', done => {
+      ActType.all(token)
+        .then(() => done())
+        .catch(e => done(e))
+    })
   })
 
-  it('should get all and then a specific one', done => {
-    Act.all(token)
-      .then(acts => {
-        if (acts[0] === undefined) {
-          return Promise.reject(new Error('Cannot find an act'))
-        }
+  describe('Act / signification', () => {
 
-        const act = acts[0]
-        return Act.get(act.id as number, token)
-      })
-      .then(() => done())
-      .catch(e => done(e))
-  })
+    it('should forbid if bad token', done => {
+      Act.all('toto')
+        .then(() => done(new Error('Should forbid')))
+        .catch(() => done())
+    })
+
+    it('should get all and then a specific one', done => {
+      Act.all(token)
+        .then(acts => {
+          if (acts[0] === undefined) {
+            return Promise.reject(new Error('Cannot find an act'))
+          }
+
+          const act = acts[0]
+          return Act.get(act.id as number, token)
+        })
+        .then(() => done())
+        .catch(e => done(e))
+    })
+
+
+    it('should create an act', async () => {
+      const actTypes = await ActType.all(token)
+      const actType = actTypes.find(a => a.name === 'Acte de saisie-contrefaçon')
+      if (actType === undefined) throw new Error('Cannot find act type')
+
+      const towns = await Town.search('Lyons la foret');
+      const town = towns[0]
+      if (town === undefined) throw new Error('Cannot find town')
+
+      const act = new Act
+      act.actTypeId = Number(actType.id)
+      act.reference = 'Unit testing'
+      await act.save(token).catch(e => console.error(e))
+
+      const signification = new Signification
+      signification.actId = act.id
+      signification.name = "Chez Pépé"
+      signification.townId = town.id
+      await signification.save(token).catch(e => console.error(e))
+
+    })
+  });
+
+  // describe('Signification', () => {
+  //   let token: string = ''
+  //   let act: Act = new Act()
+
+  //   beforeAll(async () => {
+  //     const acts = await Act.all(token);
+
+  //     if (acts[0] === undefined) {
+  //       throw new Error('Cannot find an act')
+  //     }
+
+  //     act = acts[0]
+  //   });
+
+
+  // });
 })
+

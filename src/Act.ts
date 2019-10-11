@@ -68,23 +68,24 @@ export class Act extends Model {
     })
   }
 
-  public save(significations: ActSignificationParams[] = []): Promise<any> {
+  public save(token: string | undefined = undefined): Promise<Act> {
+    if (token !== undefined) this.token = token
     if (!this.token) throw new Error('You must provide a valid JWT token.')
     if (!this.actTypeId) throw new Error('You must provide an actTypeId.')
 
     if (this.id) {
-      return this.update(significations)
+      return this.update()
     } else {
-      return this.create(significations)
+      return this.create()
     }
   }
 
-  private update(significations: ActSignificationParams[] = []): Promise<any> {
+  private update(): Promise<Act> {
     throw new Error('TODO: Not implemented')
   }
 
-  private create(significations: ActSignificationParams[] = []): Promise<any> {
-    const formData = new FormData()
+  private create(): Promise<Act> {
+    const formData = new URLSearchParams()
     if (this.express) formData.append('act[express]', String(this.express))
     if (this.actTypeId) formData.append('act[act_type_id]', String(this.actTypeId))
     if (this.reference) formData.append('act[reference]', this.reference)
@@ -96,14 +97,13 @@ export class Act extends Model {
     if (this.billSiret) formData.append('act[bill_siret]', this.billSiret)
     if (this.billEmail) formData.append('act[bill_email]', this.billEmail)
     if (this.billPhone) formData.append('act[bill_phone]', this.billPhone)
-    if (significations) formData.append('act[significations]', JSON.stringify(significations))
 
     return axios
       .post(`${apiUrl}/acts`, formData, { headers: { Authorization: this.token } })
       .then(response => {
         const responseData = response.data
         this.id = Number(responseData.data.id)
-        return responseData
+        return this
       })
   }
 

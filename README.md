@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/isignif-client.svg)](https://badge.fury.io/js/isignif-client)
 
-**en cours de développment**
+**en cours de développement**
 
 Client javascript pour utiliser l'API de iSignif.
 
@@ -18,7 +18,7 @@ $ npm install isignif-client
 
 ## Exemple
 
-Obetnir un jeton JWT pour un utilisateur:
+Obtenir un jeton JWT pour un utilisateur:
 
 ~~~ts
 import { User } from 'isignif-client';
@@ -33,14 +33,26 @@ const token = await user.getToken('mon_password');
 Créer un acte
 
 ~~~ts
-import { Act } from 'isignif-client';
+import { Act, ActType, Town, Signification } from 'isignif-client';
 
-const act = new Act();
-act.actTypeId = this.actTypeId;
-act.reference = this.reference;
-act.token = 'eyJhbGci...';
+const actTypes = await ActType.all(token)
+const actType = actTypes.find(a => a.name === 'Acte de saisie-contrefaçon')
+if (actType === undefined) throw new Error('Cannot find act type')
 
-await act.save();
+const towns = await Town.search('Lyons la foret');
+const town = towns[0]
+if (town === undefined) throw new Error('Cannot find town')
+
+const act = new Act
+act.actTypeId = Number(actType.id)
+act.reference = 'Unit testing'
+await act.save(token).catch(e => console.error(e))
+
+const signification = new Signification
+signification.actId = act.id
+signification.name = "Chez Pépé"
+signification.townId = town.id
+await signification.save(token).catch(e => console.error(e))
 ~~~
 
 On peu ensuite récupérer les actes de cet utilisateur facilement
