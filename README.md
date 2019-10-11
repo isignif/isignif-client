@@ -69,3 +69,13 @@ await act.confirm()
 ~~~
 
 TODO: ajoutes d'autres exemple
+
+## Documentation
+
+Vous pouvez générer la documentation en clonant le projet et en laçant la commande suivante:
+
+~~~
+$ npm run build
+~~~
+
+La documentation apparaîtra dans le dossier `doc`.

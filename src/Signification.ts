@@ -113,8 +113,7 @@ export class Signification extends Model {
    */
   public getBailiff(): Promise<User> {
     if (this._bailiff) return Promise.resolve(this._bailiff)
-    if (!this.bailiffId)
-      return Promise.reject(Error("Can't get bailiff because bailiffId si undefined"))
+    if (!this.bailiffId) return Promise.reject(Error("Can't get bailiff because bailiffId si undefined"))
     if (!this.token) return Promise.reject(Error("Can't get bailiff because token si undefined"))
 
     return User.get(this.bailiffId, this.token).then(advocate => (this._bailiff = advocate))
@@ -122,8 +121,8 @@ export class Signification extends Model {
 
   public getAct(): Promise<Act> {
     if (this._act) return Promise.resolve(this._act)
-    if (!this.actId) return Promise.reject(new Error("Can't get act because actId si undefined"))
-    if (!this.token) throw Promise.reject("Can't get bailiff because token si undefined")
+    if (!this.actId) return Promise.reject(Error("Can't get act because actId si undefined"))
+    if (!this.token) throw Promise.reject(Error("Can't get bailiff because token si undefined"))
 
     return Act.get(this.actId, this.token).then(act => (this._act = act))
   }

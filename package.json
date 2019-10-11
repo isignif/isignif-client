@@ -1,6 +1,6 @@
 {
   "name": "isignif-client",
-  "version": "0.0.3-alpha",
+  "version": "0.0.4-alpha",
   "description": "",
   "keywords": [],
   "main": "dist/isignif-client.umd.js",
