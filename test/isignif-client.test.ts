@@ -92,6 +92,7 @@ describe('with token', () => {
       signification.townId = town.id
       await signification.save(token).catch(e => console.error(e))
 
+      await act.confirm(token).catch(e => console.error(e))
     })
   });
 

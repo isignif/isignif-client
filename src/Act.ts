@@ -103,6 +103,7 @@ export class Act extends Model {
       .then(response => {
         const responseData = response.data
         this.id = Number(responseData.data.id)
+        this.hydrateFromAttributes(responseData.data.attributes)
         return this
       })
   }
@@ -184,5 +185,19 @@ export class Act extends Model {
 
   get name(): string {
     return this.reference || `Acte N°${this.id}`
+  }
+
+  /**
+   * Une fois confirmé, l'utilisateur s'engage à payer l'acte une fois signifié
+   */
+  confirm(token: string | undefined = undefined): Promise<Act> {
+    if (token !== undefined) this.token = token
+    if (!this.token) throw new Error('You must provide a valid JWT token.')
+    if (!this.id) throw new Error('Act not saved yet.')
+    if (this.currentStep !== 'created') throw new Error('Act has already been confirmed.')
+
+
+    return axios.post(`${apiUrl}/acts/${this.id}/confirm`, {}, { headers: { Authorization: this.token } })
+      .then(() => this)
   }
 }

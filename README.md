@@ -30,7 +30,14 @@ const token = await user.getToken('mon_password');
 // => eyJhbGci...
 ~~~
 
-Créer un acte
+On peu ensuite récupérer les actes de cet utilisateur facilement
+
+~~~ts
+import { Act } from 'isignif-client';
+const acts = await Act.all(token)
+~~~
+
+### Créer un acte
 
 ~~~ts
 import { Act, ActType, Town, Signification } from 'isignif-client';
@@ -55,12 +62,10 @@ signification.townId = town.id
 await signification.save(token).catch(e => console.error(e))
 ~~~
 
-On peu ensuite récupérer les actes de cet utilisateur facilement
+Il suffit ensuite de le confirmer. Les huissiers recevront un mail à ce moment là
 
 ~~~ts
-import { Act } from 'isignif-client';
-
-const acts = await Act.all(token)
+await act.confirm()
 ~~~
 
 TODO: ajoutes d'autres exemple
