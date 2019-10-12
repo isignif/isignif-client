@@ -85,14 +85,15 @@ export class ActFile extends Model {
 
   public getSignification(): Promise<Signification> {
     if (this._signification) return Promise.resolve(this._signification)
-    if (!this.significationId)
+    if (!this.significationId) {
       return Promise.reject(new Error("Can't get signification because userId si undefined"))
-    if (!this.actId)
-      return Promise.reject(
-        new Error("Can't get signification because significationId si undefined")
-      )
-    if (!this.token)
-      return Promise.reject(new Error("Can't get signification because token si undefined"))
+    }
+    if (!this.actId) {
+      return Promise.reject(Error("Can't get signification because significationId si undefined"))
+    }
+    if (!this.token) {
+      return Promise.reject(Error("Can't get signification because token si undefined"))
+    }
 
     return Signification.get(this.actId, this.significationId, this.token).then(
       s => (this._signification = s)

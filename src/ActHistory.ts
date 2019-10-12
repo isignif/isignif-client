@@ -60,16 +60,16 @@ export class ActHistory extends Model {
 
   public getAct(): Promise<Act> {
     if (this._act) return Promise.resolve(this._act)
-    if (!this.actId) return Promise.reject(new Error("Can't get act because actId si undefined"))
-    if (!this.token) return Promise.reject(new Error("Can't get act because token si undefined"))
+    if (!this.actId) return Promise.reject(Error("Can't get act because actId si undefined"))
+    if (!this.token) return Promise.reject(Error("Can't get act because token si undefined"))
 
     return Act.get(this.actId, this.token).then(act => (this._act = act))
   }
 
   public getUser(): Promise<User> {
     if (this._user) return Promise.resolve(this._user)
-    if (!this.userId) return Promise.reject(new Error("Can't get user because userId si undefined"))
-    if (!this.token) return Promise.reject(new Error("Can't get user because token si undefined"))
+    if (!this.userId) return Promise.reject(Error("Can't get user because userId si undefined"))
+    if (!this.token) return Promise.reject(Error("Can't get user because token si undefined"))
 
     return User.get(this.userId, this.token).then(user => (this._user = user))
   }

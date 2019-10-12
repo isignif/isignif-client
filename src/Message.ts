@@ -8,17 +8,14 @@ import { Signification } from './Signification'
 export class Message extends Model {
   public content?: string
   public significationId?: number
+  public actId?: number
   public userId?: number
   public readAt?: string
 
   public _user?: User
   public _signification?: Signification
 
-  static fromSignification(
-    actId: number,
-    significationId: number,
-    token: string
-  ): Promise<Message[]> {
+  static all(actId: number, significationId: number, token: string): Promise<Message[]> {
     const url = `${apiUrl}/acts/${actId}/significations/${significationId}/messages`
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
@@ -27,6 +24,7 @@ export class Message extends Model {
       return resp.data.data.map((rowData: any) => {
         const message = new Message()
         message.id = Number(rowData.id)
+        message.actId = Number(rowData.actId)
         message.hydrateFromAttributes(rowData.attributes, included)
         return message
       })
@@ -39,6 +37,7 @@ export class Message extends Model {
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const message = new Message()
       message.id = id
+      message.actId = actId
       message.hydrateFromAttributes(resp.data.data.attributes, resp.data.included)
       return message
     })
@@ -60,6 +59,40 @@ export class Message extends Model {
       this._user.hydrateFromAttributes(userData.attributes)
     }
   }
+
+  public save(token: string | undefined = undefined): Promise<Message> {
+    if (token !== undefined) this.token = token
+    if (!this.token) return Promise.reject(Error('You must provide a valid JWT token.'))
+    if (!this.actId) return Promise.reject(Error('You must provide a actId'))
+    if (!this.significationId) return Promise.reject(Error('You must provide a significationId'))
+    if (!this.content) return Promise.reject(Error('You must provide an content.'))
+
+    if (this.id) {
+      return this.update()
+    } else {
+      return this.create()
+    }
+  }
+
+  private update(): Promise<Message> {
+    throw new Error('TODO: Not implemented')
+  }
+
+  private create(): Promise<Message> {
+    const formData = new URLSearchParams()
+
+    formData.append('message[content]', String(this.content))
+
+    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/messages`
+
+    return axios.post(url, formData, { headers: { Authorization: this.token } }).then(response => {
+      const responseData = response.data
+      this.id = Number(responseData.data.id)
+      return this
+    })
+  }
+
+  // RELATIONSHIPS
 
   public getUser(): Promise<User> {
     if (this._user) return Promise.resolve(this._user)

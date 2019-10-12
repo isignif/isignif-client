@@ -70,8 +70,8 @@ export class Act extends Model {
 
   public save(token: string | undefined = undefined): Promise<Act> {
     if (token !== undefined) this.token = token
-    if (!this.token) throw new Error('You must provide a valid JWT token.')
-    if (!this.actTypeId) throw new Error('You must provide an actTypeId.')
+    if (!this.token) return Promise.reject(Error('You must provide a valid JWT token.'))
+    if (!this.actTypeId) return Promise.reject(Error('You must provide an actTypeId.'))
 
     if (this.id) {
       return this.update()
@@ -151,30 +151,38 @@ export class Act extends Model {
 
   public getAdvocate(): Promise<User> {
     if (this._advocate) return Promise.resolve(this._advocate)
-    if (!this.advocateId)
+
+    if (!this.advocateId) {
       return Promise.reject(new Error("Can't get advocate because advocateId si undefined"))
-    if (!this.token)
+    }
+
+    if (!this.token) {
       return Promise.reject(new Error("Can't get bailiff because token si undefined"))
+    }
 
     return User.get(this.advocateId, this.token).then(advocate => (this._advocate = advocate))
   }
 
   public getActType(): Promise<ActType> {
     if (this._actType) return Promise.resolve(this._actType)
-    if (!this.actTypeId)
+    if (!this.actTypeId) {
       return Promise.reject(new Error("Can't get actType because actTypeId si undefined"))
-    if (!this.token)
+    }
+    if (!this.token) {
       return Promise.reject(new Error("Can't get bailiff because token si undefined"))
+    }
 
     return ActType.get(this.actTypeId, this.token).then(actType => (this._actType = actType))
   }
 
   public getSignifications(): Promise<Signification[]> {
     if (this._significations) return Promise.resolve(this._significations)
-    if (!this.id)
-      return Promise.reject(new Error("Can't get significations because id si undefined"))
-    if (!this.token)
-      return Promise.reject(new Error("Can't get bailiff because token si undefined"))
+    if (!this.id) {
+      return Promise.reject(Error("Can't get significations because id si undefined"))
+    }
+    if (!this.token) {
+      return Promise.reject(Error("Can't get bailiff because token si undefined"))
+    }
 
     return Signification.all(this.id, this.token).then(
       significations => (this._significations = significations)
@@ -192,12 +200,12 @@ export class Act extends Model {
    */
   confirm(token: string | undefined = undefined): Promise<Act> {
     if (token !== undefined) this.token = token
-    if (!this.token) throw new Error('You must provide a valid JWT token.')
+    if (!this.token) return Promise.reject(Error('You must provide a valid JWT token.'))
     if (!this.id) throw new Error('Act not saved yet.')
     if (this.currentStep !== 'created') throw new Error('Act has already been confirmed.')
 
-
-    return axios.post(`${apiUrl}/acts/${this.id}/confirm`, {}, { headers: { Authorization: this.token } })
+    return axios
+      .post(`${apiUrl}/acts/${this.id}/confirm`, {}, { headers: { Authorization: this.token } })
       .then(() => this)
   }
 }
