@@ -41,7 +41,7 @@ export class ActHistory extends Model {
     })
   }
 
-  public hydrateFromAttributes(attributes: any, included: any[]): void {
+  public hydrateFromAttributes(attributes: any, included: any[] = []): void {
     this.step = attributes.step
     this.userId = Number(attributes.user_id)
     this.actId = Number(attributes.act_id)

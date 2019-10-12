@@ -43,7 +43,7 @@ export class Message extends Model {
     })
   }
 
-  public hydrateFromAttributes(attributes: any, included: any[]): void {
+  public hydrateFromAttributes(attributes: any, included: any[] = []): void {
     this.content = attributes.content
     this.significationId = Number(attributes.signification_id)
     this.userId = Number(attributes.user_id)

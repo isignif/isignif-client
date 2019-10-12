@@ -46,7 +46,7 @@ export class Signification extends Model {
     })
   }
 
-  public hydrateFromAttributes(attributes: any, included: any[]): void {
+  public hydrateFromAttributes(attributes: any, included: any[] = []): void {
     this.name = attributes.name
     this.createdAt = attributes.created_at
     this.updatedAt = attributes.updated_at

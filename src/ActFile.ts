@@ -47,7 +47,7 @@ export class ActFile extends Model {
     })
   }
 
-  public hydrateFromAttributes(attributes: any, included: any[]): void {
+  public hydrateFromAttributes(attributes: any, included: any[] = []): void {
     this.name = attributes.name
     this.kind = attributes.kind
     this.createdAt = attributes.created_at

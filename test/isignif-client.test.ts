@@ -105,6 +105,16 @@ describe('with token', () => {
       await message.save(token).catch(e => {
         throw e
       })
+
+      // get all signification messages
+
+      const messages = await Message.all(act.id as number, signification.id as number, token).catch(
+        e => {
+          throw e
+        }
+      )
+
+      expect(messages).toHaveLength(1)
     })
   })
 
