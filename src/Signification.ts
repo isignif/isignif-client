@@ -46,7 +46,7 @@ export class Signification extends Model {
     })
   }
 
-  public hydrateFromAttributes(attributes: any, included: any[] = []): void {
+  private hydrateFromAttributes(attributes: any, included: any[] = []): void {
     this.name = attributes.name
     this.createdAt = attributes.created_at
     this.updatedAt = attributes.updated_at
@@ -107,7 +107,7 @@ export class Signification extends Model {
   // RELATIONSHIPS
 
   /**
-   * Get linked bailiff or make an extra HTTP query to get
+   * Récupère l'huissier assigné à cette signification
    */
   public getBailiff(): Promise<User> {
     if (this._bailiff) return Promise.resolve(this._bailiff)
@@ -118,6 +118,9 @@ export class Signification extends Model {
     return User.get(this.bailiffId, this.token).then(advocate => (this._bailiff = advocate))
   }
 
+  /**
+   * Récupère l'acte lié à cette signification
+   */
   public getAct(): Promise<Act> {
     if (this._act) return Promise.resolve(this._act)
     if (!this.actId) return Promise.reject(Error("Can't get act because actId si undefined"))

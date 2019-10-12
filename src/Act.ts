@@ -11,17 +11,47 @@ interface ActSignificationParams {
   name: string
 }
 
+/**
+ * Un acte représente une demande effectuée. Elle contient une (ou plusieurs) significations qui demanderons l'intervention d'un huissier de justice.
+ */
 export class Act extends Model {
   public step?: string
+  /**
+   * Le destinataire de la facture
+   */
   public billRecipient?: string
+  /**
+   * Le numéro SIRET de la facture
+   */
   public billSiret?: string
+  /**
+   * L'adresse de la facture
+   */
   public billAddress?: string
+  /**
+   * Le code postal de la facture
+   */
   public billZipCode?: string
+  /**
+   * La ville de la facture
+   */
   public billTown?: string
+  /**
+   * L'email de la facture
+   */
   public billEmail?: string
+  /**
+   * Le numéro de téléphone de la facture
+   */
   public billPhone?: string
 
+  /**
+   * L'identifiant de l'utilisateur qui a déposé cet acte
+   */
   public advocateId?: number
+  /**
+   * L'identifiant du type d'acte crée
+   */
   public actTypeId?: number
   public coefficient?: number
   public express?: boolean
@@ -39,6 +69,10 @@ export class Act extends Model {
 
   // CRUD
 
+  /**
+   * Récupère tous les actes appartenant à l'utilisateur lié au jeton JWT.
+   * @param token
+   */
   static all(token: string): Promise<Act[]> {
     const url = `${apiUrl}/acts`
 
@@ -56,6 +90,11 @@ export class Act extends Model {
     })
   }
 
+  /**
+   * Récupère un acte
+   * @param id
+   * @param token
+   */
   static get(id: number, token: string): Promise<Act> {
     const url = `${apiUrl}/acts/${id}`
 
