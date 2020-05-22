@@ -19,7 +19,7 @@
 
 • **created_at**: *string*
 
-*Defined in [Model.ts:2](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L2)*
+*Defined in [Model.ts:2](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L2)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **updated_at**: *string*
 
-*Defined in [Model.ts:3](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L3)*
+*Defined in [Model.ts:3](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L3)*

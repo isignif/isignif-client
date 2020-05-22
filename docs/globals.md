@@ -30,4 +30,4 @@
 
 • **apiUrl**: *"https://isignif.fr/api/v1" | "https://test.isignif.fr/api/v1"* =  process.env.NODE_ENV === 'production' ? "https://isignif.fr/api/v1" : "https://test.isignif.fr/api/v1"
 
-*Defined in [config.ts:1](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/config.ts#L1)*
+*Defined in [config.ts:1](https://github.com/isignif/isignif-client/blob/d14fb8a/src/config.ts#L1)*

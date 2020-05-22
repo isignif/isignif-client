@@ -46,7 +46,7 @@
 
 • **_act**? : *[Act](act.md)*
 
-*Defined in [ActHistory.ts:15](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L15)*
+*Defined in [ActHistory.ts:15](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L15)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **_user**? : *[User](user.md)*
 
-*Defined in [ActHistory.ts:14](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L14)*
+*Defined in [ActHistory.ts:14](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L14)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **actId**? : *undefined | number*
 
-*Defined in [ActHistory.ts:11](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L11)*
+*Defined in [ActHistory.ts:11](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L11)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L8)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L7)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **significationId**? : *undefined | number*
 
-*Defined in [ActHistory.ts:12](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L12)*
+*Defined in [ActHistory.ts:12](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L12)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **step**? : *undefined | string*
 
-*Defined in [ActHistory.ts:9](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L9)*
+*Defined in [ActHistory.ts:9](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L9)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L11)*
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L9)*
 
 ___
 
@@ -126,7 +126,7 @@ ___
 
 • **userId**? : *undefined | number*
 
-*Defined in [ActHistory.ts:10](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L10)*
+*Defined in [ActHistory.ts:10](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L10)*
 
 ## Accessors
 
@@ -134,7 +134,7 @@ ___
 
 • **get color**(): *string*
 
-*Defined in [ActHistory.ts:94](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L94)*
+*Defined in [ActHistory.ts:94](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L94)*
 
 **Returns:** *string*
 
@@ -146,7 +146,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
@@ -158,7 +158,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedCreatedAt](model.md#formatedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L23)*
 
 **Returns:** *string*
 
@@ -170,7 +170,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedUpdatedAt](model.md#formatedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -180,7 +180,7 @@ ___
 
 • **get humanReadableStep**(): *string*
 
-*Defined in [ActHistory.ts:77](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L77)*
+*Defined in [ActHistory.ts:77](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L77)*
 
 **Returns:** *string*
 
@@ -192,7 +192,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/d14fb8a/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -202,7 +202,7 @@ ___
 
 ▸ **getAct**(): *Promise‹[Act](act.md)›*
 
-*Defined in [ActHistory.ts:61](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L61)*
+*Defined in [ActHistory.ts:61](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L61)*
 
 **Returns:** *Promise‹[Act](act.md)›*
 
@@ -212,7 +212,7 @@ ___
 
 ▸ **getUser**(): *Promise‹[User](user.md)›*
 
-*Defined in [ActHistory.ts:69](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L69)*
+*Defined in [ActHistory.ts:69](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L69)*
 
 **Returns:** *Promise‹[User](user.md)›*
 
@@ -222,7 +222,7 @@ ___
 
 ▸ **hydrateFromAttributes**(`attributes`: any, `included`: any[]): *void*
 
-*Defined in [ActHistory.ts:44](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L44)*
+*Defined in [ActHistory.ts:44](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L44)*
 
 **Parameters:**
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **fromAct**(`actId`: number, `token`: string): *Promise‹[ActHistory](acthistory.md)[]›*
 
-*Defined in [ActHistory.ts:17](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L17)*
+*Defined in [ActHistory.ts:17](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L17)*
 
 **Parameters:**
 
@@ -256,7 +256,7 @@ ___
 
 ▸ **get**(`actId`: number, `id`: number, `token`: string): *Promise‹[ActHistory](acthistory.md)›*
 
-*Defined in [ActHistory.ts:33](https://github.com/isignif/isignif-client/blob/9ffe7d1/src/ActHistory.ts#L33)*
+*Defined in [ActHistory.ts:33](https://github.com/isignif/isignif-client/blob/d14fb8a/src/ActHistory.ts#L33)*
 
 **Parameters:**
 
