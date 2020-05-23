@@ -1,6 +1,6 @@
-[isignif-client - v0.0.8-alpha](README.md) › [Globals](globals.md)
+[isignif-client - v0.0.9-alpha](README.md) › [Globals](globals.md)
 
-# isignif-client - v0.0.8-alpha
+# isignif-client - v0.0.9-alpha
 
 # iSignif client
 

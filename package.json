@@ -1,9 +1,10 @@
 {
   "name": "isignif-client",
-  "version": "0.0.8-alpha",
+  "version": "0.0.9-alpha",
   "description": "",
   "keywords": [],
-  "main": "dist/isignif-client.js",
+  "main": "dist/lib/isignif-client",
+  "module": "dist/lib/isignif-client",
   "typings": "dist/types/isignif-client.d.ts",
   "files": [
     "dist"

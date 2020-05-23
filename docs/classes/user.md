@@ -1,4 +1,4 @@
-[isignif-client - v0.0.8-alpha](../README.md) › [Globals](../globals.md) › [User](user.md)
+[isignif-client - v0.0.9-alpha](../README.md) › [Globals](../globals.md) › [User](user.md)
 
 # Class: User
 
@@ -54,7 +54,7 @@
 
 • **activated**? : *undefined | false | true*
 
-*Defined in [User.ts:9](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L9)*
+*Defined in [User.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L9)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **address1**? : *undefined | string*
 
-*Defined in [User.ts:15](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L15)*
+*Defined in [User.ts:15](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L15)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **address2**? : *undefined | string*
 
-*Defined in [User.ts:16](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L16)*
+*Defined in [User.ts:16](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L16)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **approved**? : *undefined | false | true*
 
-*Defined in [User.ts:14](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L14)*
+*Defined in [User.ts:14](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L14)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 • **companyName**? : *undefined | string*
 
-*Defined in [User.ts:19](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L19)*
+*Defined in [User.ts:19](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L19)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 • **competenceAreaId**? : *undefined | number*
 
-*Defined in [User.ts:12](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L12)*
+*Defined in [User.ts:12](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L12)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L8)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 • **creatorId**? : *undefined | number*
 
-*Defined in [User.ts:11](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L11)*
+*Defined in [User.ts:11](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L11)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **email**? : *undefined | string*
 
-*Defined in [User.ts:6](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L6)*
+*Defined in [User.ts:6](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L6)*
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 • **firstName**? : *undefined | string*
 
-*Defined in [User.ts:7](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L7)*
+*Defined in [User.ts:7](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L7)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L7)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 • **lastName**? : *undefined | string*
 
-*Defined in [User.ts:8](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L8)*
+*Defined in [User.ts:8](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L8)*
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 • **lastWork**? : *undefined | string*
 
-*Defined in [User.ts:10](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L10)*
+*Defined in [User.ts:10](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L10)*
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 • **mustResetPassword**? : *undefined | false | true*
 
-*Defined in [User.ts:13](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L13)*
+*Defined in [User.ts:13](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L13)*
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 • **phone**? : *undefined | string*
 
-*Defined in [User.ts:21](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L21)*
+*Defined in [User.ts:21](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L21)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 • **premiumUntil**? : *undefined | string*
 
-*Defined in [User.ts:22](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L22)*
+*Defined in [User.ts:22](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L22)*
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 • **siret**? : *undefined | string*
 
-*Defined in [User.ts:20](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L20)*
+*Defined in [User.ts:20](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L20)*
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L11)*
 
 ___
 
@@ -204,7 +204,7 @@ ___
 
 • **town**? : *undefined | string*
 
-*Defined in [User.ts:18](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L18)*
+*Defined in [User.ts:18](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L18)*
 
 ___
 
@@ -214,7 +214,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L9)*
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 • **zipCode**? : *undefined | string*
 
-*Defined in [User.ts:17](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L17)*
+*Defined in [User.ts:17](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L17)*
 
 ## Accessors
 
@@ -230,7 +230,7 @@ ___
 
 • **get completeName**(): *string*
 
-*Defined in [User.ts:57](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L57)*
+*Defined in [User.ts:57](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L57)*
 
 **Returns:** *string*
 
@@ -242,7 +242,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
@@ -254,7 +254,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedCreatedAt](model.md#formatedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L23)*
 
 **Returns:** *string*
 
@@ -266,7 +266,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedUpdatedAt](model.md#formatedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -278,7 +278,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -288,7 +288,7 @@ ___
 
 ▸ **getToken**(`password`: string): *Promise‹string›*
 
-*Defined in [User.ts:65](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L65)*
+*Defined in [User.ts:65](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L65)*
 
 Make an HTTP request to get a JWT token
 
@@ -306,7 +306,7 @@ ___
 
 ▸ **hydrateFromAttributes**(`attributes`: any): *void*
 
-*Defined in [User.ts:35](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L35)*
+*Defined in [User.ts:35](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L35)*
 
 **Parameters:**
 
@@ -322,7 +322,7 @@ ___
 
 ▸ **get**(`id`: number, `token`: string): *Promise‹[User](user.md)›*
 
-*Defined in [User.ts:24](https://github.com/isignif/isignif-client/blob/2e049a1/src/User.ts#L24)*
+*Defined in [User.ts:24](https://github.com/isignif/isignif-client/blob/cb04bee/src/User.ts#L24)*
 
 **Parameters:**
 

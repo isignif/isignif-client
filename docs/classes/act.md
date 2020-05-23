@@ -1,4 +1,4 @@
-[isignif-client - v0.0.8-alpha](../README.md) › [Globals](../globals.md) › [Act](act.md)
+[isignif-client - v0.0.9-alpha](../README.md) › [Globals](../globals.md) › [Act](act.md)
 
 # Class: Act
 
@@ -62,7 +62,7 @@ Un acte représente une demande effectuée. Elle contient une (ou plusieurs) sig
 
 • **actTypeId**? : *undefined | number*
 
-*Defined in [Act.ts:55](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L55)*
+*Defined in [Act.ts:55](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L55)*
 
 L'identifiant du type d'acte crée
 
@@ -72,7 +72,7 @@ ___
 
 • **advocateId**? : *undefined | number*
 
-*Defined in [Act.ts:51](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L51)*
+*Defined in [Act.ts:51](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L51)*
 
 L'identifiant de l'utilisateur qui a déposé cet acte
 
@@ -82,7 +82,7 @@ ___
 
 • **archivedAt**? : *undefined | string*
 
-*Defined in [Act.ts:61](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L61)*
+*Defined in [Act.ts:61](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L61)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **billAddress**? : *undefined | string*
 
-*Defined in [Act.ts:30](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L30)*
+*Defined in [Act.ts:30](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L30)*
 
 L'adresse de la facture
 
@@ -100,7 +100,7 @@ ___
 
 • **billEmail**? : *undefined | string*
 
-*Defined in [Act.ts:42](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L42)*
+*Defined in [Act.ts:42](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L42)*
 
 L'email de la facture
 
@@ -110,7 +110,7 @@ ___
 
 • **billPhone**? : *undefined | string*
 
-*Defined in [Act.ts:46](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L46)*
+*Defined in [Act.ts:46](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L46)*
 
 Le numéro de téléphone de la facture
 
@@ -120,7 +120,7 @@ ___
 
 • **billRecipient**? : *undefined | string*
 
-*Defined in [Act.ts:22](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L22)*
+*Defined in [Act.ts:22](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L22)*
 
 Le destinataire de la facture
 
@@ -130,7 +130,7 @@ ___
 
 • **billReference**? : *undefined | string*
 
-*Defined in [Act.ts:59](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L59)*
+*Defined in [Act.ts:59](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L59)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 • **billSiret**? : *undefined | string*
 
-*Defined in [Act.ts:26](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L26)*
+*Defined in [Act.ts:26](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L26)*
 
 Le numéro SIRET de la facture
 
@@ -148,7 +148,7 @@ ___
 
 • **billTown**? : *undefined | string*
 
-*Defined in [Act.ts:38](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L38)*
+*Defined in [Act.ts:38](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L38)*
 
 La ville de la facture
 
@@ -158,7 +158,7 @@ ___
 
 • **billZipCode**? : *undefined | string*
 
-*Defined in [Act.ts:34](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L34)*
+*Defined in [Act.ts:34](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L34)*
 
 Le code postal de la facture
 
@@ -168,7 +168,7 @@ ___
 
 • **coefficient**? : *undefined | number*
 
-*Defined in [Act.ts:56](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L56)*
+*Defined in [Act.ts:56](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L56)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L8)*
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 • **currentStep**? : *undefined | string*
 
-*Defined in [Act.ts:64](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L64)*
+*Defined in [Act.ts:64](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L64)*
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 • **downloadedAt**? : *undefined | string*
 
-*Defined in [Act.ts:60](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L60)*
+*Defined in [Act.ts:60](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L60)*
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 • **estimatedValueCache**? : *undefined | string*
 
-*Defined in [Act.ts:62](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L62)*
+*Defined in [Act.ts:62](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L62)*
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 • **express**? : *undefined | false | true*
 
-*Defined in [Act.ts:57](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L57)*
+*Defined in [Act.ts:57](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L57)*
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L7)*
 
 ___
 
@@ -228,7 +228,7 @@ ___
 
 • **reference**? : *undefined | string*
 
-*Defined in [Act.ts:58](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L58)*
+*Defined in [Act.ts:58](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L58)*
 
 ___
 
@@ -236,7 +236,7 @@ ___
 
 • **step**? : *undefined | string*
 
-*Defined in [Act.ts:18](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L18)*
+*Defined in [Act.ts:18](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L18)*
 
 ___
 
@@ -246,7 +246,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L11)*
 
 ___
 
@@ -256,7 +256,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L9)*
 
 ## Accessors
 
@@ -266,7 +266,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
@@ -278,7 +278,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedCreatedAt](model.md#formatedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L23)*
 
 **Returns:** *string*
 
@@ -290,7 +290,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedUpdatedAt](model.md#formatedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -300,7 +300,7 @@ ___
 
 • **get name**(): *string*
 
-*Defined in [Act.ts:233](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L233)*
+*Defined in [Act.ts:233](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L233)*
 
 **Returns:** *string*
 
@@ -312,7 +312,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -322,7 +322,7 @@ ___
 
 ▸ **confirm**(`token`: string | undefined): *Promise‹[Act](act.md)›*
 
-*Defined in [Act.ts:240](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L240)*
+*Defined in [Act.ts:240](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L240)*
 
 Une fois confirmé, l'utilisateur s'engage à payer l'acte une fois signifié
 
@@ -340,7 +340,7 @@ ___
 
 ▸ **getActType**(): *Promise‹[ActType](acttype.md)›*
 
-*Defined in [Act.ts:205](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L205)*
+*Defined in [Act.ts:205](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L205)*
 
 **Returns:** *Promise‹[ActType](acttype.md)›*
 
@@ -350,7 +350,7 @@ ___
 
 ▸ **getAdvocate**(): *Promise‹[User](user.md)›*
 
-*Defined in [Act.ts:191](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L191)*
+*Defined in [Act.ts:191](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L191)*
 
 **Returns:** *Promise‹[User](user.md)›*
 
@@ -360,7 +360,7 @@ ___
 
 ▸ **getSignifications**(): *Promise‹[Signification](signification.md)[]›*
 
-*Defined in [Act.ts:217](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L217)*
+*Defined in [Act.ts:217](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L217)*
 
 **Returns:** *Promise‹[Signification](signification.md)[]›*
 
@@ -370,7 +370,7 @@ ___
 
 ▸ **hydrateFromAttributes**(`attributes`: any, `included`: any[]): *void*
 
-*Defined in [Act.ts:150](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L150)*
+*Defined in [Act.ts:150](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L150)*
 
 **Parameters:**
 
@@ -387,7 +387,7 @@ ___
 
 ▸ **save**(`token`: string | undefined): *Promise‹[Act](act.md)›*
 
-*Defined in [Act.ts:110](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L110)*
+*Defined in [Act.ts:110](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L110)*
 
 **Parameters:**
 
@@ -403,7 +403,7 @@ ___
 
 ▸ **all**(`token`: string): *Promise‹[Act](act.md)[]›*
 
-*Defined in [Act.ts:76](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L76)*
+*Defined in [Act.ts:76](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L76)*
 
 Récupère tous les actes appartenant à l'utilisateur lié au jeton JWT.
 
@@ -421,7 +421,7 @@ ___
 
 ▸ **get**(`id`: number, `token`: string): *Promise‹[Act](act.md)›*
 
-*Defined in [Act.ts:98](https://github.com/isignif/isignif-client/blob/2e049a1/src/Act.ts#L98)*
+*Defined in [Act.ts:98](https://github.com/isignif/isignif-client/blob/cb04bee/src/Act.ts#L98)*
 
 Récupère un acte
 

@@ -1,4 +1,4 @@
-[isignif-client - v0.0.8-alpha](../README.md) › [Globals](../globals.md) › [ActFile](actfile.md)
+[isignif-client - v0.0.9-alpha](../README.md) › [Globals](../globals.md) › [ActFile](actfile.md)
 
 # Class: ActFile
 
@@ -44,7 +44,7 @@
 
 • **actId**? : *undefined | number*
 
-*Defined in [ActFile.ts:12](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L12)*
+*Defined in [ActFile.ts:12](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L12)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L8)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L7)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **kind**? : *undefined | string*
 
-*Defined in [ActFile.ts:10](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L10)*
+*Defined in [ActFile.ts:10](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L10)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **name**? : *undefined | string*
 
-*Defined in [ActFile.ts:9](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L9)*
+*Defined in [ActFile.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L9)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **significationId**? : *undefined | number*
 
-*Defined in [ActFile.ts:13](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L13)*
+*Defined in [ActFile.ts:13](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L13)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L11)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L9)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • **userId**? : *undefined | number*
 
-*Defined in [ActFile.ts:11](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L11)*
+*Defined in [ActFile.ts:11](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L11)*
 
 ## Accessors
 
@@ -126,7 +126,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
@@ -138,7 +138,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedCreatedAt](model.md#formatedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L23)*
 
 **Returns:** *string*
 
@@ -150,7 +150,7 @@ ___
 
 *Inherited from [Model](model.md).[formatedUpdatedAt](model.md#formatedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -162,7 +162,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/2e049a1/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **getAct**(): *Promise‹[Act](act.md)›*
 
-*Defined in [ActFile.ts:70](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L70)*
+*Defined in [ActFile.ts:70](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L70)*
 
 **Returns:** *Promise‹[Act](act.md)›*
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **getSignification**(): *Promise‹[Signification](signification.md)›*
 
-*Defined in [ActFile.ts:86](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L86)*
+*Defined in [ActFile.ts:86](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L86)*
 
 **Returns:** *Promise‹[Signification](signification.md)›*
 
@@ -192,7 +192,7 @@ ___
 
 ▸ **getUser**(): *Promise‹[User](user.md)›*
 
-*Defined in [ActFile.ts:78](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L78)*
+*Defined in [ActFile.ts:78](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L78)*
 
 **Returns:** *Promise‹[User](user.md)›*
 
@@ -202,7 +202,7 @@ ___
 
 ▸ **hydrateFromAttributes**(`attributes`: any, `included`: any[]): *void*
 
-*Defined in [ActFile.ts:50](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L50)*
+*Defined in [ActFile.ts:50](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L50)*
 
 **Parameters:**
 
@@ -219,7 +219,7 @@ ___
 
 ▸ **all**(`actId`: number, `significationId`: number, `token`: string): *Promise‹[ActFile](actfile.md)[]›*
 
-*Defined in [ActFile.ts:21](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L21)*
+*Defined in [ActFile.ts:21](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L21)*
 
 **Parameters:**
 
@@ -237,7 +237,7 @@ ___
 
 ▸ **get**(`actId`: number, `significationId`: number, `id`: number, `token`: string): *Promise‹[ActFile](actfile.md)›*
 
-*Defined in [ActFile.ts:38](https://github.com/isignif/isignif-client/blob/2e049a1/src/ActFile.ts#L38)*
+*Defined in [ActFile.ts:38](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActFile.ts#L38)*
 
 **Parameters:**
 
