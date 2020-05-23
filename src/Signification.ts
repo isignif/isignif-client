@@ -72,11 +72,10 @@ export class Signification extends Model {
     }
   }
 
-  public save(token: string | undefined = undefined): Promise<Signification> {
-    if (token !== undefined) this.token = token;
+  public save(): Promise<Signification> {
     if (!this.token) return Promise.reject(Error('You must provide a valid JWT token.'));
-    if (!this.actId) throw new Error('You must provide an actId.');
-    if (!this.townId) throw new Error('You must provide an townId.');
+    if (!this.actId) throw new Error('actId is undefined');
+    if (!this.townId) throw new Error('townId is undefined');
 
     if (this.id) {
       return this.update();

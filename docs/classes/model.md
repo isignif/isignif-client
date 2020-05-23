@@ -1,4 +1,4 @@
-[isignif-client - v0.0.9-alpha](../README.md) › [Globals](../globals.md) › [Model](model.md)
+[isignif-client - v0.0.10-alpha](../README.md) › [Globals](../globals.md) › [Model](model.md)
 
 # Class: Model
 
@@ -34,8 +34,8 @@
 ### Accessors
 
 * [createdAtDate](model.md#createdatdate)
-* [formatedCreatedAt](model.md#formatedcreatedat)
-* [formatedUpdatedAt](model.md#formatedupdatedat)
+* [formattedCreatedAt](model.md#formattedcreatedat)
+* [formattedUpdatedAt](model.md#formattedupdatedat)
 * [updatedAtDate](model.md#updatedatdate)
 
 ## Properties
@@ -44,7 +44,7 @@
 
 • **createdAt**? : *undefined | string*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L8)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **id**? : *undefined | number*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L7)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **token**? : *undefined | string*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L11)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **updatedAt**? : *undefined | string*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L9)*
 
 ## Accessors
 
@@ -76,27 +76,27 @@ ___
 
 • **get createdAtDate**(): *Date*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
 ___
 
-###  formatedCreatedAt
+###  formattedCreatedAt
 
-• **get formatedCreatedAt**(): *string*
+• **get formattedCreatedAt**(): *string*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L23)*
 
 **Returns:** *string*
 
 ___
 
-###  formatedUpdatedAt
+###  formattedUpdatedAt
 
-• **get formatedUpdatedAt**(): *string*
+• **get formattedUpdatedAt**(): *string*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -106,6 +106,6 @@ ___
 
 • **get updatedAtDate**(): *Date*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L18)*
 
 **Returns:** *Date*

@@ -10,6 +10,7 @@ export class ActType extends Model {
   public expressValue?: number;
 
   static all(token: string): Promise<ActType[]> {
+    if (!token) throw Error('You must provide a valid JWT token.');
     const url = `${apiUrl}/act_types`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {

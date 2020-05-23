@@ -3,13 +3,6 @@
 
 ~~~ts
 import { Act, ActType, Town, Signification } from 'isignif-client';
-
-
-const signification = new Signification
-signification.actId = act.id
-signification.name = "Chez Pépé"
-signification.townId = town.id
-await signification.save(token).catch(e => console.error(e))
 ~~~
 
 Il suffit ensuite de le confirmer. Les huissiers recevront un mail à ce moment là

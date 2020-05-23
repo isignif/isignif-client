@@ -20,11 +20,11 @@ export abstract class Model {
     return new Date(this.updatedAt);
   }
 
-  get formatedCreatedAt(): string {
+  get formattedCreatedAt(): string {
     return `${this.createdAtDate.toLocaleDateString('fr-FR')} ${this.createdAtDate.getHours()}:${this.createdAtDate.getMinutes()}`;
   }
 
-  get formatedUpdatedAt(): string {
+  get formattedUpdatedAt(): string {
     return `${this.updatedAtDate.toLocaleDateString('fr-FR')} ${this.updatedAtDate.getHours()}:${this.updatedAtDate.getMinutes()}`;
   }
 }

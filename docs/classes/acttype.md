@@ -1,4 +1,4 @@
-[isignif-client - v0.0.9-alpha](../README.md) › [Globals](../globals.md) › [ActType](acttype.md)
+[isignif-client - v0.0.10-alpha](../README.md) › [Globals](../globals.md) › [ActType](acttype.md)
 
 # Class: ActType
 
@@ -24,8 +24,8 @@
 ### Accessors
 
 * [createdAtDate](acttype.md#createdatdate)
-* [formatedCreatedAt](acttype.md#formatedcreatedat)
-* [formatedUpdatedAt](acttype.md#formatedupdatedat)
+* [formattedCreatedAt](acttype.md#formattedcreatedat)
+* [formattedUpdatedAt](acttype.md#formattedupdatedat)
 * [updatedAtDate](acttype.md#updatedatdate)
 
 ### Methods
@@ -40,7 +40,7 @@
 
 • **actFamilyId**? : *undefined | number*
 
-*Defined in [ActType.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActType.ts#L9)*
+*Defined in [ActType.ts:9](https://github.com/isignif/isignif-client/blob/b42d22a/src/ActType.ts#L9)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L8)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **expressValue**? : *undefined | number*
 
-*Defined in [ActType.ts:10](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActType.ts#L10)*
+*Defined in [ActType.ts:10](https://github.com/isignif/isignif-client/blob/b42d22a/src/ActType.ts#L10)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L7)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **name**? : *undefined | string*
 
-*Defined in [ActType.ts:7](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActType.ts#L7)*
+*Defined in [ActType.ts:7](https://github.com/isignif/isignif-client/blob/b42d22a/src/ActType.ts#L7)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L11)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L9)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **value**? : *undefined | number*
 
-*Defined in [ActType.ts:8](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActType.ts#L8)*
+*Defined in [ActType.ts:8](https://github.com/isignif/isignif-client/blob/b42d22a/src/ActType.ts#L8)*
 
 ## Accessors
 
@@ -114,31 +114,31 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
 ___
 
-###  formatedCreatedAt
+###  formattedCreatedAt
 
-• **get formatedCreatedAt**(): *string*
+• **get formattedCreatedAt**(): *string*
 
-*Inherited from [Model](model.md).[formatedCreatedAt](model.md#formatedcreatedat)*
+*Inherited from [Model](model.md).[formattedCreatedAt](model.md#formattedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L23)*
 
 **Returns:** *string*
 
 ___
 
-###  formatedUpdatedAt
+###  formattedUpdatedAt
 
-• **get formatedUpdatedAt**(): *string*
+• **get formattedUpdatedAt**(): *string*
 
-*Inherited from [Model](model.md).[formatedUpdatedAt](model.md#formatedupdatedat)*
+*Inherited from [Model](model.md).[formattedUpdatedAt](model.md#formattedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -150,7 +150,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/cb04bee/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -160,7 +160,7 @@ ___
 
 ▸ **hydrateFromAttributes**(`attributes`: any): *void*
 
-*Defined in [ActType.ts:36](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActType.ts#L36)*
+*Defined in [ActType.ts:37](https://github.com/isignif/isignif-client/blob/b42d22a/src/ActType.ts#L37)*
 
 **Parameters:**
 
@@ -176,7 +176,7 @@ ___
 
 ▸ **all**(`token`: string): *Promise‹[ActType](acttype.md)[]›*
 
-*Defined in [ActType.ts:12](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActType.ts#L12)*
+*Defined in [ActType.ts:12](https://github.com/isignif/isignif-client/blob/b42d22a/src/ActType.ts#L12)*
 
 **Parameters:**
 
@@ -192,7 +192,7 @@ ___
 
 ▸ **get**(`id`: number, `token`: string): *Promise‹[ActType](acttype.md)›*
 
-*Defined in [ActType.ts:26](https://github.com/isignif/isignif-client/blob/cb04bee/src/ActType.ts#L26)*
+*Defined in [ActType.ts:27](https://github.com/isignif/isignif-client/blob/b42d22a/src/ActType.ts#L27)*
 
 **Parameters:**
 

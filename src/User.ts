@@ -64,7 +64,7 @@ export class User extends Model {
    */
   public getToken(password: string): Promise<string> {
     if (!this.email) {
-      return Promise.reject(new Error("Can't get a token if user email is undefined"));
+      throw Error("Can't get a token if user email is undefined");
     }
 
     const url = `${apiUrl}/tokens`;

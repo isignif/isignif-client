@@ -18,7 +18,7 @@ $ npm install isignif-client
 
 ## Exemple
 
-Voir le dossier `examples`.
+Voir le dossier [`examples`](https://github.com/isignif/isignif-client/tree/master/examples).
 
 
 ## Documentation

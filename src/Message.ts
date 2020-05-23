@@ -32,7 +32,7 @@ export class Message extends Model {
   }
 
   static get(actId: number, significationId: number, id: number, token: string): Promise<Message> {
-    const url = `acts/${actId}/act_histories/${id}/messages/${id}`;
+    const url = `acts/${actId}/significations/${significationId}/messages/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const message = new Message();
@@ -60,12 +60,11 @@ export class Message extends Model {
     }
   }
 
-  public save(token: string | undefined = undefined): Promise<Message> {
-    if (token !== undefined) this.token = token;
-    if (!this.token) return Promise.reject(Error('You must provide a valid JWT token.'));
-    if (!this.actId) return Promise.reject(Error('You must provide a actId'));
-    if (!this.significationId) return Promise.reject(Error('You must provide a significationId'));
-    if (!this.content) return Promise.reject(Error('You must provide an content.'));
+  public save(): Promise<Message> {
+    if (!this.token) throw Error("token is undefined");
+    if (!this.actId) throw Error("actId is undefined");
+    if (!this.significationId) throw Error("significationId is undefined");
+    if (!this.content) throw Error("content is undefined");
 
     if (this.id) {
       return this.update();
@@ -79,8 +78,11 @@ export class Message extends Model {
   }
 
   private create(): Promise<Message> {
-    const formData = new URLSearchParams();
+    if (!this.token) throw Error("token is undefined");
+    if (!this.actId) throw Error("actId is undefined");
+    if (!this.significationId) throw Error("significationId is undefined");
 
+    const formData = new URLSearchParams();
     formData.append('message[content]', String(this.content));
 
     const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/messages`;
@@ -96,8 +98,8 @@ export class Message extends Model {
 
   public getUser(): Promise<User> {
     if (this._user) return Promise.resolve(this._user);
-    if (!this.userId) return Promise.reject(new Error("Can't get user because userId si undefined"));
-    if (!this.token) return Promise.reject(new Error("Can't get user because token si undefined"));
+    if (!this.userId) throw Error("userId is undefined");
+    if (!this.token) throw Error("token is undefined");
 
     return User.get(this.userId, this.token).then(user => (this._user = user));
   }

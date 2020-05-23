@@ -69,31 +69,25 @@ export class ActFile extends Model {
 
   public getAct(): Promise<Act> {
     if (this._act) return Promise.resolve(this._act);
-    if (!this.actId) return Promise.reject(new Error("Can't get act because actId si undefined"));
-    if (!this.token) return Promise.reject(new Error("Can't get act because token si undefined"));
+    if (!this.actId) throw Error("actId is undefined");
+    if (!this.token) throw Error("token is undefined");
 
     return Act.get(this.actId, this.token).then(act => (this._act = act));
   }
 
   public getUser(): Promise<User> {
     if (this._user) return Promise.resolve(this._user);
-    if (!this.userId) return Promise.reject(new Error("Can't get user because userId si undefined"));
-    if (!this.token) return Promise.reject(new Error("Can't get user because token si undefined"));
+    if (!this.userId) throw Error("userId is undefined");
+    if (!this.token) throw Error("token is undefined");
 
     return User.get(this.userId, this.token).then(user => (this._user = user));
   }
 
   public getSignification(): Promise<Signification> {
     if (this._signification) return Promise.resolve(this._signification);
-    if (!this.significationId) {
-      return Promise.reject(new Error("Can't get signification because userId si undefined"));
-    }
-    if (!this.actId) {
-      return Promise.reject(Error("Can't get signification because significationId si undefined"));
-    }
-    if (!this.token) {
-      return Promise.reject(Error("Can't get signification because token si undefined"));
-    }
+    if (!this.significationId) throw Error("significationId is undefined");
+    if (!this.actId) throw Error("actId is undefined");
+    if (!this.token) throw Error("token is undefined");
 
     return Signification.get(this.actId, this.significationId, this.token).then(
       s => (this._signification = s)
