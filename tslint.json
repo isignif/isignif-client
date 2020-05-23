@@ -1,5 +1,7 @@
 {
   "rules": {
-    "curly": [true, "ignore-same-line"]
+    "curly": [true, "ignore-same-line"],
+    "semicolon": "always",
+    "indent": [true, "spaces", 4]
   }
 }

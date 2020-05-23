@@ -1,105 +1,105 @@
-import axios from 'axios'
+import axios from 'axios';
 
-import { Model } from './Model'
-import { apiUrl } from './config'
-import { User } from './User'
-import { Signification } from './Signification'
+import { Model } from './Model';
+import { apiUrl } from './config';
+import { User } from './User';
+import { Signification } from './Signification';
 
 export class Message extends Model {
-  public content?: string
-  public significationId?: number
-  public actId?: number
-  public userId?: number
-  public readAt?: string
+  public content?: string;
+  public significationId?: number;
+  public actId?: number;
+  public userId?: number;
+  public readAt?: string;
 
-  public _user?: User
-  public _signification?: Signification
+  public _user?: User;
+  public _signification?: Signification;
 
   static all(actId: number, significationId: number, token: string): Promise<Message[]> {
-    const url = `${apiUrl}/acts/${actId}/significations/${significationId}/messages`
+    const url = `${apiUrl}/acts/${actId}/significations/${significationId}/messages`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
-      const included = resp.data.included
+      const included = resp.data.included;
 
       return resp.data.data.map((rowData: any) => {
-        const message = new Message()
-        message.id = Number(rowData.id)
-        message.actId = Number(rowData.actId)
-        message.hydrateFromAttributes(rowData.attributes, included)
-        return message
-      })
-    })
+        const message = new Message();
+        message.id = Number(rowData.id);
+        message.actId = Number(rowData.actId);
+        message.hydrateFromAttributes(rowData.attributes, included);
+        return message;
+      });
+    });
   }
 
   static get(actId: number, significationId: number, id: number, token: string): Promise<Message> {
-    const url = `acts/${actId}/act_histories/${id}/messages/${id}`
+    const url = `acts/${actId}/act_histories/${id}/messages/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
-      const message = new Message()
-      message.id = id
-      message.actId = actId
-      message.hydrateFromAttributes(resp.data.data.attributes, resp.data.included)
-      return message
-    })
+      const message = new Message();
+      message.id = id;
+      message.actId = actId;
+      message.hydrateFromAttributes(resp.data.data.attributes, resp.data.included);
+      return message;
+    });
   }
 
   public hydrateFromAttributes(attributes: any, included: any[] = []): void {
-    this.content = attributes.content
-    this.significationId = Number(attributes.signification_id)
-    this.userId = Number(attributes.user_id)
-    this.createdAt = attributes.created_at
-    this.updatedAt = attributes.updated_at
-    this.readAt = attributes.read_at
+    this.content = attributes.content;
+    this.significationId = Number(attributes.signification_id);
+    this.userId = Number(attributes.user_id);
+    this.createdAt = attributes.created_at;
+    this.updatedAt = attributes.updated_at;
+    this.readAt = attributes.read_at;
 
-    const userData = included.find(i => i.id === String(this.userId) && i.type === 'user')
+    const userData = included.find(i => i.id === String(this.userId) && i.type === 'user');
 
     if (userData) {
-      this._user = new User()
-      this._user.id = this.userId
-      this._user.hydrateFromAttributes(userData.attributes)
+      this._user = new User();
+      this._user.id = this.userId;
+      this._user.hydrateFromAttributes(userData.attributes);
     }
   }
 
   public save(token: string | undefined = undefined): Promise<Message> {
-    if (token !== undefined) this.token = token
-    if (!this.token) return Promise.reject(Error('You must provide a valid JWT token.'))
-    if (!this.actId) return Promise.reject(Error('You must provide a actId'))
-    if (!this.significationId) return Promise.reject(Error('You must provide a significationId'))
-    if (!this.content) return Promise.reject(Error('You must provide an content.'))
+    if (token !== undefined) this.token = token;
+    if (!this.token) return Promise.reject(Error('You must provide a valid JWT token.'));
+    if (!this.actId) return Promise.reject(Error('You must provide a actId'));
+    if (!this.significationId) return Promise.reject(Error('You must provide a significationId'));
+    if (!this.content) return Promise.reject(Error('You must provide an content.'));
 
     if (this.id) {
-      return this.update()
+      return this.update();
     } else {
-      return this.create()
+      return this.create();
     }
   }
 
   private update(): Promise<Message> {
-    throw new Error('TODO: Not implemented')
+    throw new Error('TODO: Not implemented');
   }
 
   private create(): Promise<Message> {
-    const formData = new URLSearchParams()
+    const formData = new URLSearchParams();
 
-    formData.append('message[content]', String(this.content))
+    formData.append('message[content]', String(this.content));
 
-    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/messages`
+    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/messages`;
 
     return axios.post(url, formData, { headers: { Authorization: this.token } }).then(response => {
-      const responseData = response.data
-      this.id = Number(responseData.data.id)
-      return this
-    })
+      const responseData = response.data;
+      this.id = Number(responseData.data.id);
+      return this;
+    });
   }
 
   // RELATIONSHIPS
 
   public getUser(): Promise<User> {
-    if (this._user) return Promise.resolve(this._user)
-    if (!this.userId) return Promise.reject(new Error("Can't get user because userId si undefined"))
-    if (!this.token) return Promise.reject(new Error("Can't get user because token si undefined"))
+    if (this._user) return Promise.resolve(this._user);
+    if (!this.userId) return Promise.reject(new Error("Can't get user because userId si undefined"));
+    if (!this.token) return Promise.reject(new Error("Can't get user because token si undefined"));
 
-    return User.get(this.userId, this.token).then(user => (this._user = user))
+    return User.get(this.userId, this.token).then(user => (this._user = user));
   }
 
   // public getSignification(): Promise<User> {

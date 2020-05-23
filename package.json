@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint  --project tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts' 'examples/*.js' ",
     "prebuild": "rm -r dist || true",
     "build": "tsc --module commonjs && typedoc --out docs --target es6 --mode file src --excludePrivate --excludeProtected --excludeNotExported --plugin typedoc-plugin-markdown"
   },
