@@ -1,6 +1,6 @@
-[isignif-client](README.md) › [Globals](globals.md)
+[isignif-client - v0.0.8-alpha](README.md) › [Globals](globals.md)
 
-# isignif-client
+# isignif-client - v0.0.8-alpha
 
 # iSignif client
 
@@ -25,13 +25,6 @@ $ npm install isignif-client
 Obtenir un jeton JWT pour un utilisateur:
 
 ~~~ts
-import { User } from 'isignif-client';
-
-const user = new User();
-user.email = 'test@isignif.fr';
-
-const token = await user.getToken('mon_password');
-// => eyJhbGci...
 ~~~
 
 On peu ensuite récupérer les actes de cet utilisateur facilement
