@@ -1,6 +1,6 @@
-[isignif-client - v0.0.11-alpha](README.md) › [Globals](globals.md)
+[isignif-client - v0.0.13-alpha](README.md) › [Globals](globals.md)
 
-# isignif-client - v0.0.11-alpha
+# isignif-client - v0.0.13-alpha
 
 ## Index
 
@@ -30,4 +30,4 @@
 
 • **apiUrl**: *"https://isignif.fr/api/v1" | "https://test.isignif.fr/api/v1"* =  process.env.NODE_ENV === 'production' ? "https://isignif.fr/api/v1" : "https://test.isignif.fr/api/v1"
 
-*Defined in [config.ts:1](https://github.com/isignif/isignif-client/blob/208f3c5/src/config.ts#L1)*
+*Defined in [config.ts:1](https://github.com/isignif/isignif-client/blob/21fb240/src/config.ts#L1)*

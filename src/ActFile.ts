@@ -100,7 +100,7 @@ export class ActFile extends Model {
     return formData;
   }
 
-  public delete(): Promise<ActFile> {
+  public remove(): Promise<ActFile> {
     if (!this.id) throw Error('ActFile not created yet.');
     if (!this.token) throw Error("token is undefined");
     if (!this.actId) throw Error("actId is undefined");

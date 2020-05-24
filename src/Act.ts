@@ -143,12 +143,12 @@ export class Act extends Model {
       });
   }
 
-  public delete(): Promise<Act> {
+  public remove(): Promise<Act> {
     if (!this.id) throw Error('Act not created yet.');
     if (!this.token) throw Error("token is undefined");
 
     return axios
-      .delete(`${apiUrl}/acts`, { headers: { Authorization: this.token } })
+      .delete(`${apiUrl}/acts/${this.id}`, { headers: { Authorization: this.token } })
       .then(() => {
         this.id = undefined;
         return this;

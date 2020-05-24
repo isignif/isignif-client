@@ -116,12 +116,14 @@ export class Signification extends Model {
     return formData;
   }
 
-  public delete(): Promise<Signification> {
+  public remove(): Promise<Signification> {
     if (!this.id) throw Error('Act not created yet.');
     if (!this.token) throw Error("token is undefined");
 
+    const url = `${apiUrl}/acts/${this.actId}/significations/${this.id}`;
+
     return axios
-      .delete(`${apiUrl}/acts`, { headers: { Authorization: this.token } })
+      .delete(url, { headers: { Authorization: this.token } })
       .then(() => {
         this.id = undefined;
         return this;
