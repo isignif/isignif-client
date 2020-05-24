@@ -10,7 +10,7 @@ export class ActFile extends Model {
   public kind?: string;
   public userId?: number;
   public actId?: number;
-  public files?: Blob[];
+  public files?: FileList;
   public significationId?: number;
 
   private _user?: User;
@@ -94,9 +94,16 @@ export class ActFile extends Model {
 
   private get formData(): FormData {
     const formData = new FormData();
-    formData.append('act_type[express]', String(this.kind));
-    formData.append('act_type[name]', String(this.name));
-    this.files?.forEach((f) => formData.append('act_type[files]', f));
+    formData.append('act_file[kind]', String(this.kind));
+    formData.append('act_file[name]', String(this.name));
+
+    if (this.files) {
+      for (let i = 0; i < this.files.length; i++) {
+        const file = this.files.item(i);
+        formData.append('act_file[files]', file as Blob);
+      }
+    }
+
     return formData;
   }
 
