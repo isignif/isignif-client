@@ -10,6 +10,7 @@ export class ActFile extends Model {
   public kind?: string;
   public userId?: number;
   public actId?: number;
+  public files?: Blob[];
   public significationId?: number;
 
   private _user?: User;
@@ -45,6 +46,74 @@ export class ActFile extends Model {
       file.hydrateFromAttributes(resp.data.data.attributes, resp.data.included);
       return file;
     });
+  }
+
+  public save(): Promise<ActFile> {
+    if (!this.token) throw Error("token is undefined");
+    if (!this.actId) throw Error("actId is undefined");
+    if (!this.significationId) throw Error("significationId is undefined");
+    if (!this.kind) throw Error("kind is undefined");
+    if (!this.name) throw Error("name is undefined");
+
+    if (this.id) {
+      return this.update();
+    } else {
+      return this.create();
+    }
+  }
+
+
+  private update(): Promise<ActFile> {
+    if (!this.token) throw Error('You must provide a valid JWT token.');
+    if (!this.id) throw Error('Act not created yet.');
+
+    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/act_files/${this.id}`;
+
+    return axios
+      .put(url, this.formData, { headers: { Authorization: this.token } })
+      .then(response => {
+        const responseData = response.data;
+        this.id = Number(responseData.data.id);
+        this.hydrateFromAttributes(responseData.data.attributes);
+        return this;
+      });
+  }
+
+  private create(): Promise<ActFile> {
+    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/act_files/`;
+
+    return axios
+      .post(url, this.formData, { headers: { Authorization: this.token } })
+      .then(response => {
+        const responseData = response.data;
+        this.id = Number(responseData.data.id);
+        this.hydrateFromAttributes(responseData.data.attributes);
+        return this;
+      });
+  }
+
+  private get formData(): FormData {
+    const formData = new FormData();
+    formData.append('act_type[express]', String(this.kind));
+    formData.append('act_type[name]', String(this.name));
+    this.files?.forEach((f) => formData.append('act_type[files]', f));
+    return formData;
+  }
+
+  public delete(): Promise<ActFile> {
+    if (!this.id) throw Error('ActFile not created yet.');
+    if (!this.token) throw Error("token is undefined");
+    if (!this.actId) throw Error("actId is undefined");
+    if (!this.significationId) throw Error("significationId is undefined");
+
+    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/act_files/${this.id}`;
+
+    return axios
+      .delete(url, { headers: { Authorization: this.token } })
+      .then(() => {
+        this.id = undefined;
+        return this;
+      });
   }
 
   public hydrateFromAttributes(attributes: any, included: any[] = []): void {

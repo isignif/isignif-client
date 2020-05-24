@@ -122,12 +122,40 @@ export class Act extends Model {
   }
 
   private update(): Promise<Act> {
-    throw new Error('TODO: Not implemented');
+    return axios
+      .put(`${apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
+      .then(response => {
+        const responseData = response.data;
+        this.id = Number(responseData.data.id);
+        this.hydrateFromAttributes(responseData.data.attributes);
+        return this;
+      });
   }
 
   private create(): Promise<Act> {
-    if (!this.token) throw Error('You must provide a valid JWT token.');
+    return axios
+      .post(`${apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
+      .then(response => {
+        const responseData = response.data;
+        this.id = Number(responseData.data.id);
+        this.hydrateFromAttributes(responseData.data.attributes);
+        return this;
+      });
+  }
 
+  public delete(): Promise<Act> {
+    if (!this.id) throw Error('Act not created yet.');
+    if (!this.token) throw Error("token is undefined");
+
+    return axios
+      .delete(`${apiUrl}/acts`, { headers: { Authorization: this.token } })
+      .then(() => {
+        this.id = undefined;
+        return this;
+      });
+  }
+
+  private get formData(): URLSearchParams {
     const formData = new URLSearchParams();
     if (this.express) formData.append('act[express]', String(this.express));
     if (this.actTypeId) formData.append('act[act_type_id]', String(this.actTypeId));
@@ -141,14 +169,7 @@ export class Act extends Model {
     if (this.billEmail) formData.append('act[bill_email]', this.billEmail);
     if (this.billPhone) formData.append('act[bill_phone]', this.billPhone);
 
-    return axios
-      .post(`${apiUrl}/acts`, formData, { headers: { Authorization: this.token } })
-      .then(response => {
-        const responseData = response.data;
-        this.id = Number(responseData.data.id);
-        this.hydrateFromAttributes(responseData.data.attributes);
-        return this;
-      });
+    return formData;
   }
 
   public hydrateFromAttributes(attributes: any, included: any[] = []): void {
@@ -210,7 +231,7 @@ export class Act extends Model {
 
   public getSignifications(): Promise<Signification[]> {
     if (this._significations) return Promise.resolve(this._significations);
-    if (!this.id) throw Error('Act not saved yet.');
+    if (!this.id) throw Error('Act not created yet.');
     if (!this.token) throw Error("token is undefined");
 
     return Signification.all(this.id, this.token).then(

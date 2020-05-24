@@ -85,22 +85,47 @@ export class Signification extends Model {
   }
 
   private update(): Promise<Signification> {
-    throw new Error('TODO: Not implemented');
-  }
-
-  private create(): Promise<Signification> {
-    const formData = new URLSearchParams();
-
-    formData.append('signification[town_id]', String(this.townId));
-    formData.append('signification[name]', String(this.name));
-
     const url = `${apiUrl}/acts/${this.actId}/significations`;
 
-    return axios.post(url, formData, { headers: { Authorization: this.token } }).then(response => {
-      const responseData = response.data;
-      this.id = Number(responseData.data.id);
-      return this;
-    });
+    return axios.put(url, this.formData, { headers: { Authorization: this.token } })
+      .then(response => {
+        const responseData = response.data;
+        this.id = Number(responseData.data.id);
+        this.hydrateFromAttributes(responseData.data.attributes);
+        return this;
+      });
+  }
+
+
+  private create(): Promise<Signification> {
+    const url = `${apiUrl}/acts/${this.actId}/significations`;
+
+    return axios.post(url, this.formData, { headers: { Authorization: this.token } })
+      .then(response => {
+        const responseData = response.data;
+        this.id = Number(responseData.data.id);
+        this.hydrateFromAttributes(responseData.data.attributes);
+        return this;
+      });
+  }
+
+  private get formData(): URLSearchParams {
+    const formData = new URLSearchParams();
+    formData.append('signification[town_id]', String(this.townId));
+    formData.append('signification[name]', String(this.name));
+    return formData;
+  }
+
+  public delete(): Promise<Signification> {
+    if (!this.id) throw Error('Act not created yet.');
+    if (!this.token) throw Error("token is undefined");
+
+    return axios
+      .delete(`${apiUrl}/acts`, { headers: { Authorization: this.token } })
+      .then(() => {
+        this.id = undefined;
+        return this;
+      });
   }
 
   // RELATIONSHIPS

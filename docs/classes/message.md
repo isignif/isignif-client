@@ -1,4 +1,4 @@
-[isignif-client - v0.0.10-alpha](../README.md) › [Globals](../globals.md) › [Message](message.md)
+[isignif-client - v0.0.11-alpha](../README.md) › [Globals](../globals.md) › [Message](message.md)
 
 # Class: Message
 
@@ -45,7 +45,7 @@
 
 • **_signification**? : *[Signification](signification.md)*
 
-*Defined in [Message.ts:16](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L16)*
+*Defined in [Message.ts:16](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L16)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **_user**? : *[User](user.md)*
 
-*Defined in [Message.ts:15](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L15)*
+*Defined in [Message.ts:15](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L15)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **actId**? : *undefined | number*
 
-*Defined in [Message.ts:11](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L11)*
+*Defined in [Message.ts:11](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L11)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **content**? : *undefined | string*
 
-*Defined in [Message.ts:9](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L9)*
+*Defined in [Message.ts:9](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L9)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L8)*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L7)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 • **readAt**? : *undefined | string*
 
-*Defined in [Message.ts:13](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L13)*
+*Defined in [Message.ts:13](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L13)*
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **significationId**? : *undefined | number*
 
-*Defined in [Message.ts:10](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L10)*
+*Defined in [Message.ts:10](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L10)*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L11)*
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L9)*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 • **userId**? : *undefined | number*
 
-*Defined in [Message.ts:12](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L12)*
+*Defined in [Message.ts:12](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L12)*
 
 ## Accessors
 
@@ -143,7 +143,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
@@ -155,7 +155,7 @@ ___
 
 *Inherited from [Model](model.md).[formattedCreatedAt](model.md#formattedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L23)*
 
 **Returns:** *string*
 
@@ -167,7 +167,7 @@ ___
 
 *Inherited from [Model](model.md).[formattedUpdatedAt](model.md#formattedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -179,7 +179,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/b42d22a/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/208f3c5/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -189,7 +189,7 @@ ___
 
 ▸ **getUser**(): *Promise‹[User](user.md)›*
 
-*Defined in [Message.ts:99](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L99)*
+*Defined in [Message.ts:99](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L99)*
 
 **Returns:** *Promise‹[User](user.md)›*
 
@@ -199,7 +199,7 @@ ___
 
 ▸ **hydrateFromAttributes**(`attributes`: any, `included`: any[]): *void*
 
-*Defined in [Message.ts:46](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L46)*
+*Defined in [Message.ts:46](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L46)*
 
 **Parameters:**
 
@@ -216,7 +216,7 @@ ___
 
 ▸ **save**(): *Promise‹[Message](message.md)›*
 
-*Defined in [Message.ts:63](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L63)*
+*Defined in [Message.ts:63](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L63)*
 
 **Returns:** *Promise‹[Message](message.md)›*
 
@@ -226,7 +226,7 @@ ___
 
 ▸ **all**(`actId`: number, `significationId`: number, `token`: string): *Promise‹[Message](message.md)[]›*
 
-*Defined in [Message.ts:18](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L18)*
+*Defined in [Message.ts:18](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L18)*
 
 **Parameters:**
 
@@ -244,7 +244,7 @@ ___
 
 ▸ **get**(`actId`: number, `significationId`: number, `id`: number, `token`: string): *Promise‹[Message](message.md)›*
 
-*Defined in [Message.ts:34](https://github.com/isignif/isignif-client/blob/b42d22a/src/Message.ts#L34)*
+*Defined in [Message.ts:34](https://github.com/isignif/isignif-client/blob/208f3c5/src/Message.ts#L34)*
 
 **Parameters:**
 
