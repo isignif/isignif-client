@@ -6,3 +6,4 @@ export { Message } from './Message';
 export { Signification } from './Signification';
 export { Town } from './Town';
 export { User } from './User';
+export { configuration } from './Configuration';

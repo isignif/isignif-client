@@ -1,6 +1,6 @@
-[isignif-client - v0.0.14-alpha](README.md) › [Globals](globals.md)
+[isignif-client - v0.0.15-alpha](README.md) › [Globals](globals.md)
 
-# isignif-client - v0.0.14-alpha
+# isignif-client - v0.0.15-alpha
 
 ## Index
 
@@ -22,12 +22,21 @@
 
 ### Variables
 
-* [apiUrl](globals.md#const-apiurl)
+* [configuration](globals.md#const-configuration)
 
 ## Variables
 
-### `Const` apiUrl
+### `Const` configuration
 
-• **apiUrl**: *"https://isignif.fr/api/v1" | "https://test.isignif.fr/api/v1"* =  process.env.NODE_ENV === 'production' ? "https://isignif.fr/api/v1" : "https://test.isignif.fr/api/v1"
+• **configuration**: *Configuration‹›* =  Configuration.getInstance()
 
-*Defined in [config.ts:1](https://github.com/isignif/isignif-client/blob/5251eb8/src/config.ts#L1)*
+*Defined in [Configuration.ts:25](https://github.com/isignif/isignif-client/blob/d3f5678/src/Configuration.ts#L25)*
+
+Permet de modifier globalement la configuration de la librairie.
+
+Exemple:
+
+~~~ts
+const { configuration } = require('isignif-client');
+configuration.apiUrl = "https://test.isignif.fr/api/v1";
+~~~

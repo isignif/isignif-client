@@ -3,7 +3,7 @@ import { Model } from './Model';
 import { Act } from './Act';
 import { User } from './User';
 import { Signification } from './Signification';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 
 export class ActFile extends Model {
   public name?: string;
@@ -20,7 +20,7 @@ export class ActFile extends Model {
   // CRUD
 
   static all(actId: number, significationId: number, token: string): Promise<ActFile[]> {
-    const url = `${apiUrl}/acts/${actId}/act_files/`;
+    const url = `${configuration.apiUrl}/acts/${actId}/act_files/`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const included = resp.data.included;
@@ -37,7 +37,7 @@ export class ActFile extends Model {
   }
 
   static get(actId: number, significationId: number, id: number, token: string): Promise<ActFile> {
-    const url = `${apiUrl}/acts/${actId}/act_files/${id}`;
+    const url = `${configuration.apiUrl}/acts/${actId}/act_files/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const file = new ActFile();
@@ -63,7 +63,7 @@ export class ActFile extends Model {
 
 
   private update(): Promise<ActFile> {
-    const url = `${apiUrl}/acts/${this.actId}/act_files/${this.id}`;
+    const url = `${configuration.apiUrl}/acts/${this.actId}/act_files/${this.id}`;
 
     return axios
       .put(url, this.formData, { headers: { Authorization: this.token } })
@@ -76,7 +76,7 @@ export class ActFile extends Model {
   }
 
   private create(): Promise<ActFile> {
-    const url = `${apiUrl}/acts/${this.actId}/act_files/`;
+    const url = `${configuration.apiUrl}/acts/${this.actId}/act_files/`;
 
     return axios
       .post(url, this.formData, { headers: { Authorization: this.token } })
@@ -109,7 +109,7 @@ export class ActFile extends Model {
     if (!this.token) throw Error("token is undefined");
     if (!this.actId) throw Error("actId is undefined");
 
-    const url = `${apiUrl}/acts/${this.actId}/act_files/${this.id}`;
+    const url = `${configuration.apiUrl}/acts/${this.actId}/act_files/${this.id}`;
 
     return axios
       .delete(url, { headers: { Authorization: this.token } })

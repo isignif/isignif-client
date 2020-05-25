@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { Model } from './Model';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 import { User } from './User';
 import { ActType } from './ActType';
 import { Signification } from './Signification';
@@ -75,7 +75,7 @@ export class Act extends Model {
    */
   static all(token: string): Promise<Act[]> {
     if (!token) throw Error('You must provide a valid JWT token.');
-    const url = `${apiUrl}/acts`;
+    const url = `${configuration.apiUrl}/acts`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const included = resp.data.included;
@@ -99,7 +99,7 @@ export class Act extends Model {
   static get(id: number, token: string): Promise<Act> {
     if (!token) throw Error('You must provide a valid JWT token.');
 
-    const url = `${apiUrl}/acts/${id}`;
+    const url = `${configuration.apiUrl}/acts/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const act = new Act();
@@ -123,7 +123,7 @@ export class Act extends Model {
 
   private update(): Promise<Act> {
     return axios
-      .put(`${apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
+      .put(`${configuration.apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -134,7 +134,7 @@ export class Act extends Model {
 
   private create(): Promise<Act> {
     return axios
-      .post(`${apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
+      .post(`${configuration.apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -148,7 +148,7 @@ export class Act extends Model {
     if (!this.token) throw Error("token is undefined");
 
     return axios
-      .delete(`${apiUrl}/acts/${this.id}`, { headers: { Authorization: this.token } })
+      .delete(`${configuration.apiUrl}/acts/${this.id}`, { headers: { Authorization: this.token } })
       .then(() => {
         this.id = undefined;
         return this;
@@ -254,7 +254,7 @@ export class Act extends Model {
     if (this.currentStep !== 'created') throw new Error('Act has already been confirmed.');
 
     return axios
-      .post(`${apiUrl}/acts/${this.id}/confirm`, {}, { headers: { Authorization: this.token } })
+      .post(`${configuration.apiUrl}/acts/${this.id}/confirm`, {}, { headers: { Authorization: this.token } })
       .then(() => this);
   }
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { Model } from './Model';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 import { User } from './User';
 import { Signification } from './Signification';
 
@@ -16,7 +16,7 @@ export class Message extends Model {
   public _signification?: Signification;
 
   static all(actId: number, significationId: number, token: string): Promise<Message[]> {
-    const url = `${apiUrl}/acts/${actId}/significations/${significationId}/messages`;
+    const url = `${configuration.apiUrl}/acts/${actId}/significations/${significationId}/messages`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const included = resp.data.included;
@@ -85,7 +85,7 @@ export class Message extends Model {
     const formData = new URLSearchParams();
     formData.append('message[content]', String(this.content));
 
-    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/messages`;
+    const url = `${configuration.apiUrl}/acts/${this.actId}/significations/${this.significationId}/messages`;
 
     return axios.post(url, formData, { headers: { Authorization: this.token } }).then(response => {
       const responseData = response.data;

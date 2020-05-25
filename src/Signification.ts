@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { Model } from './Model';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 import { User } from './User';
 import { Act } from './Act';
 
@@ -18,7 +18,7 @@ export class Signification extends Model {
   // CRUD
 
   static all(actId: number, token: string): Promise<Signification[]> {
-    const url = `${apiUrl}/acts/${actId}/significations`;
+    const url = `${configuration.apiUrl}/acts/${actId}/significations`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const included = resp.data.included;
@@ -35,7 +35,7 @@ export class Signification extends Model {
   }
 
   static get(actId: number, id: number, token: string): Promise<Signification> {
-    const url = `${apiUrl}/acts/${actId}/significations/${id}`;
+    const url = `${configuration.apiUrl}/acts/${actId}/significations/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const signification = new Signification();
@@ -85,7 +85,7 @@ export class Signification extends Model {
   }
 
   private update(): Promise<Signification> {
-    const url = `${apiUrl}/acts/${this.actId}/significations`;
+    const url = `${configuration.apiUrl}/acts/${this.actId}/significations`;
 
     return axios.put(url, this.formData, { headers: { Authorization: this.token } })
       .then(response => {
@@ -98,7 +98,7 @@ export class Signification extends Model {
 
 
   private create(): Promise<Signification> {
-    const url = `${apiUrl}/acts/${this.actId}/significations`;
+    const url = `${configuration.apiUrl}/acts/${this.actId}/significations`;
 
     return axios.post(url, this.formData, { headers: { Authorization: this.token } })
       .then(response => {
@@ -120,7 +120,7 @@ export class Signification extends Model {
     if (!this.id) throw Error('Act not created yet.');
     if (!this.token) throw Error("token is undefined");
 
-    const url = `${apiUrl}/acts/${this.actId}/significations/${this.id}`;
+    const url = `${configuration.apiUrl}/acts/${this.actId}/significations/${this.id}`;
 
     return axios
       .delete(url, { headers: { Authorization: this.token } })

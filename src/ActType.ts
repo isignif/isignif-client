@@ -1,7 +1,6 @@
 import axios from 'axios';
-
 import { Model } from './Model';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 
 export class ActType extends Model {
   public name?: string;
@@ -11,7 +10,7 @@ export class ActType extends Model {
 
   static all(token: string): Promise<ActType[]> {
     if (!token) throw Error('You must provide a valid JWT token.');
-    const url = `${apiUrl}/act_types`;
+    const url = `${configuration.apiUrl}/act_types`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       return resp.data.data.map((actTypeData: any) => {
@@ -25,7 +24,7 @@ export class ActType extends Model {
   }
 
   static get(id: number, token: string): Promise<ActType> {
-    const url = `${apiUrl}/act_types/${id}`;
+    const url = `${configuration.apiUrl}/act_types/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const actType = new ActType();

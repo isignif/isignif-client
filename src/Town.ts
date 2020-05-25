@@ -2,13 +2,13 @@
 import axios from 'axios';
 
 import { Model } from './Model';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 
 export class Town extends Model {
     public name?: string;
 
     public static search(term: string): Promise<Town[]> {
-        const url = `${apiUrl}/towns/search`;
+        const url = `${configuration.apiUrl}/towns/search`;
 
         const formData = new URLSearchParams();
         formData.append('term', term);

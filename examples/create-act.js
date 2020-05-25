@@ -1,5 +1,7 @@
 // const { User, Act, ActType, Town, Signification } = require('isignif-client');
-const { User, Act, ActType, Town, Signification } = require("../dist/lib/isignif-client");
+const { User, Act, ActType, Town, Signification, configuration } = require("../dist/lib/isignif-client");
+
+configuration.apiUrl = "https://test.isignif.fr/api/v1";
 
 const user = new User();
 user.email = "advocate@test.isignif.fr";

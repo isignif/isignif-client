@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Model } from './Model';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 
 export class User extends Model {
   public email?: string;
@@ -22,7 +22,7 @@ export class User extends Model {
   public premiumUntil?: string;
 
   static get(id: number, token: string): Promise<User> {
-    const url = `${apiUrl}/advocates/${id}`;
+    const url = `${configuration.apiUrl}/advocates/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const user = new User();
@@ -67,7 +67,7 @@ export class User extends Model {
       throw Error("Can't get a token if user email is undefined");
     }
 
-    const url = `${apiUrl}/tokens`;
+    const url = `${configuration.apiUrl}/tokens`;
 
     const formData = new URLSearchParams();
     formData.append('user[email]', this.email);

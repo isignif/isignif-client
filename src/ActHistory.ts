@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { Model } from './Model';
-import { apiUrl } from './config';
+import { configuration } from './Configuration';
 import { User } from './User';
 import { Act } from './Act';
 
@@ -15,7 +15,7 @@ export class ActHistory extends Model {
   public _act?: Act;
 
   static fromAct(actId: number, token: string): Promise<ActHistory[]> {
-    const url = `${apiUrl}/acts/${actId}/act_histories`;
+    const url = `${configuration.apiUrl}/acts/${actId}/act_histories`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const included = resp.data.included;
@@ -31,7 +31,7 @@ export class ActHistory extends Model {
   }
 
   static get(actId: number, id: number, token: string): Promise<ActHistory> {
-    const url = `${apiUrl}/acts/${actId}/act_histories/${id}`;
+    const url = `${configuration.apiUrl}/acts/${actId}/act_histories/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const actHistory = new ActHistory();
