@@ -51,7 +51,6 @@ export class ActFile extends Model {
   public save(): Promise<ActFile> {
     if (!this.token) throw Error("token is undefined");
     if (!this.actId) throw Error("actId is undefined");
-    if (!this.significationId) throw Error("significationId is undefined");
     if (!this.kind) throw Error("kind is undefined");
     if (!this.name) throw Error("name is undefined");
 
@@ -109,7 +108,6 @@ export class ActFile extends Model {
     if (!this.id) throw Error('ActFile not created yet.');
     if (!this.token) throw Error("token is undefined");
     if (!this.actId) throw Error("actId is undefined");
-    if (!this.significationId) throw Error("significationId is undefined");
 
     const url = `${apiUrl}/acts/${this.actId}/act_files/${this.id}`;
 
