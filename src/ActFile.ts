@@ -7,7 +7,7 @@ import { apiUrl } from './config';
 
 export class ActFile extends Model {
   public name?: string;
-  public kind?: string;
+  public kind?: 'default' | 'to_deliver' | 'instruction_letter' | 'appendices' | 'bill' | 'proof_of_service';
   public userId?: number;
   public actId?: number;
   public files?: FileList;
@@ -20,7 +20,7 @@ export class ActFile extends Model {
   // CRUD
 
   static all(actId: number, significationId: number, token: string): Promise<ActFile[]> {
-    const url = `${apiUrl}/acts/${actId}/significations/${significationId}/act_files/`;
+    const url = `${apiUrl}/acts/${actId}/act_files/`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const included = resp.data.included;
@@ -37,7 +37,7 @@ export class ActFile extends Model {
   }
 
   static get(actId: number, significationId: number, id: number, token: string): Promise<ActFile> {
-    const url = `${apiUrl}/acts/${actId}/significations/${significationId}/act_files/${id}`;
+    const url = `${apiUrl}/acts/${actId}/act_files/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
       const file = new ActFile();
@@ -64,10 +64,7 @@ export class ActFile extends Model {
 
 
   private update(): Promise<ActFile> {
-    if (!this.token) throw Error('You must provide a valid JWT token.');
-    if (!this.id) throw Error('Act not created yet.');
-
-    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/act_files/${this.id}`;
+    const url = `${apiUrl}/acts/${this.actId}/act_files/${this.id}`;
 
     return axios
       .put(url, this.formData, { headers: { Authorization: this.token } })
@@ -80,7 +77,7 @@ export class ActFile extends Model {
   }
 
   private create(): Promise<ActFile> {
-    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/act_files/`;
+    const url = `${apiUrl}/acts/${this.actId}/act_files/`;
 
     return axios
       .post(url, this.formData, { headers: { Authorization: this.token } })
@@ -96,6 +93,7 @@ export class ActFile extends Model {
     const formData = new FormData();
     formData.append('act_file[kind]', String(this.kind));
     formData.append('act_file[name]', String(this.name));
+    formData.append('act_file[signification_id]', String(this.significationId));
 
     if (this.files) {
       for (let i = 0; i < this.files.length; i++) {
@@ -113,7 +111,7 @@ export class ActFile extends Model {
     if (!this.actId) throw Error("actId is undefined");
     if (!this.significationId) throw Error("significationId is undefined");
 
-    const url = `${apiUrl}/acts/${this.actId}/significations/${this.significationId}/act_files/${this.id}`;
+    const url = `${apiUrl}/acts/${this.actId}/act_files/${this.id}`;
 
     return axios
       .delete(url, { headers: { Authorization: this.token } })
