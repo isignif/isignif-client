@@ -1,4 +1,4 @@
-[isignif-client - v0.0.15-alpha](../README.md) › [Globals](../globals.md) › [Town](town.md)
+[isignif-client - v0.0.16-alpha](../README.md) › [Globals](../globals.md) › [Town](town.md)
 
 # Class: Town
 
@@ -37,7 +37,7 @@
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L8)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L7)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **name**? : *undefined | string*
 
-*Defined in [Town.ts:8](https://github.com/isignif/isignif-client/blob/d3f5678/src/Town.ts#L8)*
+*Defined in [Town.ts:8](https://github.com/isignif/isignif-client/blob/4facfc5/src/Town.ts#L8)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L11)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L9)*
 
 ## Accessors
 
@@ -85,7 +85,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
@@ -97,7 +97,7 @@ ___
 
 *Inherited from [Model](model.md).[formattedCreatedAt](model.md#formattedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L23)*
 
 **Returns:** *string*
 
@@ -109,7 +109,7 @@ ___
 
 *Inherited from [Model](model.md).[formattedUpdatedAt](model.md#formattedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -121,7 +121,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -131,7 +131,7 @@ ___
 
 ▸ **search**(`term`: string): *Promise‹[Town](town.md)[]›*
 
-*Defined in [Town.ts:10](https://github.com/isignif/isignif-client/blob/d3f5678/src/Town.ts#L10)*
+*Defined in [Town.ts:10](https://github.com/isignif/isignif-client/blob/4facfc5/src/Town.ts#L10)*
 
 **Parameters:**
 

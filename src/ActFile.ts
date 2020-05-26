@@ -19,7 +19,7 @@ export class ActFile extends Model {
 
   // CRUD
 
-  static all(actId: number, significationId: number, token: string): Promise<ActFile[]> {
+  static all(actId: number, token: string): Promise<ActFile[]> {
     const url = `${configuration.apiUrl}/acts/${actId}/act_files/`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {
@@ -36,7 +36,7 @@ export class ActFile extends Model {
     });
   }
 
-  static get(actId: number, significationId: number, id: number, token: string): Promise<ActFile> {
+  static get(actId: number, id: number, token: string): Promise<ActFile> {
     const url = `${configuration.apiUrl}/acts/${actId}/act_files/${id}`;
 
     return axios.get(url, { headers: { Authorization: token } }).then(resp => {

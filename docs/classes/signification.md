@@ -1,4 +1,4 @@
-[isignif-client - v0.0.15-alpha](../README.md) › [Globals](../globals.md) › [Signification](signification.md)
+[isignif-client - v0.0.16-alpha](../README.md) › [Globals](../globals.md) › [Signification](signification.md)
 
 # Class: Signification
 
@@ -44,7 +44,7 @@
 
 • **actId**? : *undefined | number*
 
-*Defined in [Signification.ts:11](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L11)*
+*Defined in [Signification.ts:11](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L11)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **bailiffComment**? : *undefined | string*
 
-*Defined in [Signification.ts:13](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L13)*
+*Defined in [Signification.ts:13](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L13)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **bailiffId**? : *undefined | number*
 
-*Defined in [Signification.ts:10](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L10)*
+*Defined in [Signification.ts:10](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L10)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAt](model.md#optional-createdat)*
 
-*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L8)*
+*Defined in [Model.ts:8](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L8)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [Model](model.md).[id](model.md#optional-id)*
 
-*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L7)*
+*Defined in [Model.ts:7](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L7)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **name**? : *undefined | string*
 
-*Defined in [Signification.ts:9](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L9)*
+*Defined in [Signification.ts:9](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L9)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 *Inherited from [Model](model.md).[token](model.md#optional-token)*
 
-*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L11)*
+*Defined in [Model.ts:11](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L11)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • **townId**? : *undefined | number*
 
-*Defined in [Signification.ts:12](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L12)*
+*Defined in [Signification.ts:12](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L12)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAt](model.md#optional-updatedat)*
 
-*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L9)*
+*Defined in [Model.ts:9](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L9)*
 
 ## Accessors
 
@@ -126,7 +126,7 @@ ___
 
 *Inherited from [Model](model.md).[createdAtDate](model.md#createdatdate)*
 
-*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L13)*
+*Defined in [Model.ts:13](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L13)*
 
 **Returns:** *Date*
 
@@ -138,7 +138,7 @@ ___
 
 *Inherited from [Model](model.md).[formattedCreatedAt](model.md#formattedcreatedat)*
 
-*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L23)*
+*Defined in [Model.ts:23](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L23)*
 
 **Returns:** *string*
 
@@ -150,7 +150,7 @@ ___
 
 *Inherited from [Model](model.md).[formattedUpdatedAt](model.md#formattedupdatedat)*
 
-*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L27)*
+*Defined in [Model.ts:27](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L27)*
 
 **Returns:** *string*
 
@@ -162,7 +162,7 @@ ___
 
 *Inherited from [Model](model.md).[updatedAtDate](model.md#updatedatdate)*
 
-*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/d3f5678/src/Model.ts#L18)*
+*Defined in [Model.ts:18](https://github.com/isignif/isignif-client/blob/4facfc5/src/Model.ts#L18)*
 
 **Returns:** *Date*
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **getAct**(): *Promise‹[Act](act.md)›*
 
-*Defined in [Signification.ts:151](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L151)*
+*Defined in [Signification.ts:151](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L151)*
 
 Récupère l'acte lié à cette signification
 
@@ -184,7 +184,7 @@ ___
 
 ▸ **getBailiff**(): *Promise‹[User](user.md)›*
 
-*Defined in [Signification.ts:138](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L138)*
+*Defined in [Signification.ts:138](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L138)*
 
 Récupère l'huissier assigné à cette signification
 
@@ -196,7 +196,7 @@ ___
 
 ▸ **remove**(): *Promise‹[Signification](signification.md)›*
 
-*Defined in [Signification.ts:119](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L119)*
+*Defined in [Signification.ts:119](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L119)*
 
 **Returns:** *Promise‹[Signification](signification.md)›*
 
@@ -206,7 +206,7 @@ ___
 
 ▸ **save**(): *Promise‹[Signification](signification.md)›*
 
-*Defined in [Signification.ts:75](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L75)*
+*Defined in [Signification.ts:75](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L75)*
 
 **Returns:** *Promise‹[Signification](signification.md)›*
 
@@ -216,7 +216,7 @@ ___
 
 ▸ **all**(`actId`: number, `token`: string): *Promise‹[Signification](signification.md)[]›*
 
-*Defined in [Signification.ts:20](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L20)*
+*Defined in [Signification.ts:20](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L20)*
 
 **Parameters:**
 
@@ -233,7 +233,7 @@ ___
 
 ▸ **get**(`actId`: number, `id`: number, `token`: string): *Promise‹[Signification](signification.md)›*
 
-*Defined in [Signification.ts:37](https://github.com/isignif/isignif-client/blob/d3f5678/src/Signification.ts#L37)*
+*Defined in [Signification.ts:37](https://github.com/isignif/isignif-client/blob/4facfc5/src/Signification.ts#L37)*
 
 **Parameters:**
 

@@ -1,6 +1,6 @@
-[isignif-client - v0.0.15-alpha](README.md) › [Globals](globals.md)
+[isignif-client - v0.0.16-alpha](README.md) › [Globals](globals.md)
 
-# isignif-client - v0.0.15-alpha
+# isignif-client - v0.0.16-alpha
 
 ## Index
 
@@ -30,7 +30,7 @@
 
 • **configuration**: *Configuration‹›* =  Configuration.getInstance()
 
-*Defined in [Configuration.ts:25](https://github.com/isignif/isignif-client/blob/d3f5678/src/Configuration.ts#L25)*
+*Defined in [Configuration.ts:25](https://github.com/isignif/isignif-client/blob/4facfc5/src/Configuration.ts#L25)*
 
 Permet de modifier globalement la configuration de la librairie.
 
