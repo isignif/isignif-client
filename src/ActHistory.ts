@@ -46,6 +46,7 @@ export class ActHistory extends Model {
     this.userId = Number(attributes.user_id);
     this.actId = Number(attributes.act_id);
     this.significationId = Number(attributes.signification_id);
+
     this.createdAt = attributes.created_at;
     this.updatedAt = attributes.updated_at;
 

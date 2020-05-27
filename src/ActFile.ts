@@ -128,6 +128,9 @@ export class ActFile extends Model {
     this.actId = Number(attributes.act_id);
     this.significationId = Number(attributes.signification_id);
 
+    this.createdAt = attributes.created_at;
+    this.updatedAt = attributes.updated_at;
+
     const actData = included.find(i => String(i.id) === String(this.actId) && i.type === 'act');
 
     if (actData) {

@@ -190,6 +190,9 @@ export class Act extends Model {
     this.estimatedValueCache = attributes.estimated_value_cache;
     this.currentStep = attributes.current_step;
 
+    this.createdAt = attributes.created_at;
+    this.updatedAt = attributes.updated_at;
+
     const userData = included.find(
       i => String(i.id) === String(this.advocateId) && i.type === 'advocate'
     );
