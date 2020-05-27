@@ -18,7 +18,7 @@ export class Message extends Model {
   static all(actId: number, significationId: number, token: string): Promise<Message[]> {
     const url = `${configuration.apiUrl}/acts/${actId}/significations/${significationId}/messages`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token } , ...configuration.requestConfig}).then(resp => {
       const included = resp.data.included;
 
       return resp.data.data.map((rowData: any) => {
@@ -34,7 +34,7 @@ export class Message extends Model {
   static get(actId: number, significationId: number, id: number, token: string): Promise<Message> {
     const url = `acts/${actId}/significations/${significationId}/messages/${id}`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const message = new Message();
       message.id = id;
       message.actId = actId;
@@ -87,7 +87,7 @@ export class Message extends Model {
 
     const url = `${configuration.apiUrl}/acts/${this.actId}/significations/${this.significationId}/messages`;
 
-    return axios.post(url, formData, { headers: { Authorization: this.token } }).then(response => {
+    return axios.post(url, formData, { headers: { Authorization: this.token }, ...configuration.requestConfig }).then(response => {
       const responseData = response.data;
       this.id = Number(responseData.data.id);
       return this;

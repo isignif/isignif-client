@@ -22,7 +22,7 @@ export class ActFile extends Model {
   static all(actId: number, token: string): Promise<ActFile[]> {
     const url = `${configuration.apiUrl}/acts/${actId}/act_files/`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const included = resp.data.included;
 
       return resp.data.data.map((rowData: any) => {
@@ -39,7 +39,7 @@ export class ActFile extends Model {
   static get(actId: number, id: number, token: string): Promise<ActFile> {
     const url = `${configuration.apiUrl}/acts/${actId}/act_files/${id}`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const file = new ActFile();
       file.token = token;
       file.id = id;
@@ -66,7 +66,7 @@ export class ActFile extends Model {
     const url = `${configuration.apiUrl}/acts/${this.actId}/act_files/${this.id}`;
 
     return axios
-      .put(url, this.formData, { headers: { Authorization: this.token } })
+      .put(url, this.formData, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -79,7 +79,7 @@ export class ActFile extends Model {
     const url = `${configuration.apiUrl}/acts/${this.actId}/act_files/`;
 
     return axios
-      .post(url, this.formData, { headers: { Authorization: this.token } })
+      .post(url, this.formData, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -112,7 +112,7 @@ export class ActFile extends Model {
     const url = `${configuration.apiUrl}/acts/${this.actId}/act_files/${this.id}`;
 
     return axios
-      .delete(url, { headers: { Authorization: this.token } })
+      .delete(url, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(() => {
         this.id = undefined;
         return this;

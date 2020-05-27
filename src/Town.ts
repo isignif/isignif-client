@@ -13,7 +13,7 @@ export class Town extends Model {
         const formData = new URLSearchParams();
         formData.append('term', term);
 
-        return axios.post(url, formData).then(resp => {
+        return axios.post(url, formData, configuration.requestConfig).then(resp => {
             return resp.data.map((rowData: any) => {
                 const town = new Town();
                 town.id = Number(rowData.id);

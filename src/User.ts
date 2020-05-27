@@ -24,7 +24,7 @@ export class User extends Model {
   static get(id: number, token: string): Promise<User> {
     const url = `${configuration.apiUrl}/advocates/${id}`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const user = new User();
       user.id = id;
       user.hydrateFromAttributes(resp.data.data.attributes);
@@ -74,7 +74,7 @@ export class User extends Model {
     formData.append('user[password]', password);
 
     return axios
-      .post(url, formData)
+      .post(url, formData, configuration.requestConfig)
       .then(resp => resp.data.token)
       .catch(e => console.error(e));
   }

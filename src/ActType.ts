@@ -12,7 +12,7 @@ export class ActType extends Model {
     if (!token) throw Error('You must provide a valid JWT token.');
     const url = `${configuration.apiUrl}/act_types`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       return resp.data.data.map((actTypeData: any) => {
         const actType = new ActType();
         actType.id = Number(actTypeData.id);
@@ -26,7 +26,7 @@ export class ActType extends Model {
   static get(id: number, token: string): Promise<ActType> {
     const url = `${configuration.apiUrl}/act_types/${id}`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const actType = new ActType();
       actType.id = id;
       return actType;

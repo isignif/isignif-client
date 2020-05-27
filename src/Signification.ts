@@ -20,7 +20,7 @@ export class Signification extends Model {
   static all(actId: number, token: string): Promise<Signification[]> {
     const url = `${configuration.apiUrl}/acts/${actId}/significations`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const included = resp.data.included;
 
       return resp.data.data.map((rowData: any) => {
@@ -37,7 +37,7 @@ export class Signification extends Model {
   static get(actId: number, id: number, token: string): Promise<Signification> {
     const url = `${configuration.apiUrl}/acts/${actId}/significations/${id}`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const signification = new Signification();
       signification.token = token;
       signification.id = id;
@@ -87,7 +87,7 @@ export class Signification extends Model {
   private update(): Promise<Signification> {
     const url = `${configuration.apiUrl}/acts/${this.actId}/significations`;
 
-    return axios.put(url, this.formData, { headers: { Authorization: this.token } })
+    return axios.put(url, this.formData, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -100,7 +100,7 @@ export class Signification extends Model {
   private create(): Promise<Signification> {
     const url = `${configuration.apiUrl}/acts/${this.actId}/significations`;
 
-    return axios.post(url, this.formData, { headers: { Authorization: this.token } })
+    return axios.post(url, this.formData, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -123,7 +123,7 @@ export class Signification extends Model {
     const url = `${configuration.apiUrl}/acts/${this.actId}/significations/${this.id}`;
 
     return axios
-      .delete(url, { headers: { Authorization: this.token } })
+      .delete(url, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(() => {
         this.id = undefined;
         return this;

@@ -17,7 +17,7 @@ export class ActHistory extends Model {
   static fromAct(actId: number, token: string): Promise<ActHistory[]> {
     const url = `${configuration.apiUrl}/acts/${actId}/act_histories`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const included = resp.data.included;
 
       return resp.data.data.map((actHistoryData: any) => {
@@ -33,7 +33,7 @@ export class ActHistory extends Model {
   static get(actId: number, id: number, token: string): Promise<ActHistory> {
     const url = `${configuration.apiUrl}/acts/${actId}/act_histories/${id}`;
 
-    return axios.get(url, { headers: { Authorization: token } }).then(resp => {
+    return axios.get(url, { headers: { Authorization: token }, ...configuration.requestConfig }).then(resp => {
       const actHistory = new ActHistory();
       actHistory.id = id;
       actHistory.hydrateFromAttributes(resp.data.data.attributes, resp.data.included);

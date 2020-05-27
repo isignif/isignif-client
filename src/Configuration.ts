@@ -1,6 +1,12 @@
+import { AxiosRequestConfig } from 'axios';
+
 class Configuration {
     private static instance: Configuration;
     public apiUrl = "https://isignif.fr/api/v1";
+    public requestConfig: AxiosRequestConfig = {
+        httpAgent: 'isignif-client',
+        httpsAgent: 'isignif-client',
+    };
 
     public static getInstance(): Configuration {
         if (Configuration.instance) {

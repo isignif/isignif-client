@@ -123,7 +123,7 @@ export class Act extends Model {
 
   private update(): Promise<Act> {
     return axios
-      .put(`${configuration.apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
+      .put(`${configuration.apiUrl}/acts`, this.formData, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -134,7 +134,7 @@ export class Act extends Model {
 
   private create(): Promise<Act> {
     return axios
-      .post(`${configuration.apiUrl}/acts`, this.formData, { headers: { Authorization: this.token } })
+      .post(`${configuration.apiUrl}/acts`, this.formData, { headers: { Authorization: this.token }, ...configuration.requestConfig})
       .then(response => {
         const responseData = response.data;
         this.id = Number(responseData.data.id);
@@ -148,7 +148,7 @@ export class Act extends Model {
     if (!this.token) throw Error("token is undefined");
 
     return axios
-      .delete(`${configuration.apiUrl}/acts/${this.id}`, { headers: { Authorization: this.token } })
+      .delete(`${configuration.apiUrl}/acts/${this.id}`, { headers: { Authorization: this.token }, ...configuration.requestConfig })
       .then(() => {
         this.id = undefined;
         return this;
