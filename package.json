@@ -1,37 +1,25 @@
 {
   "name": "isignif-client",
-  "version": "0.0.17-alpha",
-  "description": "",
+  "version": "1.0.0",
+  "description": "HTTP client for iSignif",
   "keywords": [],
-  "main": "dist/lib/isignif-client",
+  "main": "Api.js",
+  "type": "module",
+  "types": "Api.d.ts",
   "module": "dist/lib/isignif-client",
   "typings": "dist/types/isignif-client.d.ts",
-  "files": [
-    "dist"
-  ],
   "author": "Alexandre Rousseau <a.rousseau@isignif.fr>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/isignif/isignif-client"
+    "url": "git+https://github.com/isignif/isignif-client.git"
   },
   "license": "MIT",
   "scripts": {
-    "lint": "tslint  --project tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts' 'examples/*.js' ",
-    "prebuild": "rm -r dist || true",
-    "build": "tsc --module commonjs && typedoc --out docs --target es6 --mode file src --excludePrivate --excludeProtected --excludeNotExported --plugin typedoc-plugin-markdown"
+    "generate-client": "swagger-typescript-api generate -p https://isignif.fr/openapi.yml --js",
+    "generate-client:local": "swagger-typescript-api generate -p http://localhost:3000/openapi.yml --js"
   },
   "devDependencies": {
-    "@types/node": "^10.17.24",
-    "prompt": "^1.0.0",
-    "replace-in-file": "^3.4.2",
-    "semantic-release": "^15.14.0",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.20.1",
-    "typedoc": "^0.15.8",
-    "typedoc-plugin-markdown": "^2.2.17",
-    "typescript": "^3.9.3"
+    "swagger-typescript-api": "^13.1.3"
   },
-  "dependencies": {
-    "axios": "^0.19.2"
-  }
+  "dependencies": {}
 }

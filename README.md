@@ -2,31 +2,11 @@
 
 [![npm version](https://badge.fury.io/js/isignif-client.svg)](https://badge.fury.io/js/isignif-client)
 
-**en cours de développement**
-
-Client javascript pour utiliser l'API de iSignif.
-
-> Cette librairie est utilisée pour l'application Web [Vue.JS de isignif](https://github.com/isignif/vue-app/)
+Client javascript pour utiliser l'API de iSignif auto-généré à partir de la [documentation
+OpenAPI](https://isignif.fr/docs/openapi).
 
 ## Installation
 
-~~~bash
-$ yarn add isignif-client
-$ # or
-$ npm install isignif-client
-~~~
-
-## Exemple
-
-Voir le dossier [`examples`](https://github.com/isignif/isignif-client/tree/master/examples).
-
-
-## Documentation
-
-Vous pouvez générer la documentation en clonant le projet et en laçant la commande suivante:
-
-~~~
-$ npm run build
-~~~
-
-La documentation apparaîtra dans le dossier `doc`.
+```bash
+npm install isignif-client
+```
