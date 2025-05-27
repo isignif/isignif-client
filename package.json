@@ -1,13 +1,11 @@
 {
   "name": "isignif-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HTTP client for iSignif",
   "keywords": [],
   "main": "Api.js",
   "type": "module",
   "types": "Api.d.ts",
-  "module": "dist/lib/isignif-client",
-  "typings": "dist/types/isignif-client.d.ts",
   "author": "Alexandre Rousseau <a.rousseau@isignif.fr>",
   "repository": {
     "type": "git",
